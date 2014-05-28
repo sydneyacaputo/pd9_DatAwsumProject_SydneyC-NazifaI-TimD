@@ -12,3 +12,4 @@
 2014-05-28
 —> Sydney modified card class to account for the face cards and better fit the deck and suits classes
 —> added a timeline file 
+-> Tim added a constructor and update method to Solitaire.java
