@@ -7,3 +7,6 @@ Added Ranks and edited certain methods
 Added Deck: the main pile from where the player takes the cards from
 Added Suits: the four piles that will be sorted
 -Tim Diep
+
+2014-05-27
+Added Card class: will be the class that is used to make the array lists, stacks etc..
