@@ -3,3 +3,24 @@ Timeline/ To Do List:
 - pile interface 
 	- deck, suits, and ranks will all implement this interface 
 - test the classes 
+	- with test cases, make 
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- finish the project
