@@ -14,45 +14,45 @@ import java.io.*;
 
 
 public class Card{
-    private String suit;
-    private int value; 
-    private String actVal;
-    private boolean flipped;
+    private String _suit;
+    private int _value; 
+    private String _actVal;
+    private boolean _flipped;
 
     //later on we can just have a couple of simple for loops that will set these cards 
     public Card(int v, String s){
-	suit= s;
-	value = v;
+	_suit= s;
+	_value = v;
 	if (1< v && v <= 10)
-	    actVal=""+value;
-	else if (v =11)
-	    actVal= "Jack";
-	else if (v =12)
-	    actVal= "Queen";
-	else if (v =13)
-	    actVal= "King";
+	    _actVal=""+_value;
+	else if (v ==11)
+	    _actVal= "Jack";
+	else if (v ==12)
+	    _actVal= "Queen";
+	else if (v ==13)
+	    _actVal= "King";
 	else
-	    actVal="Ace";
-	flipped = false;
+	    _actVal="Ace";
+	_flipped = false;
     }
    
     
     private String getActVal(){
-	return actVal;
+	return _actVal;
     }
     private String getSuit(){
-	return suit;
+	return _suit;
     }
 
     private int getValue(){
-	return value;
+	return _value;
     }
 
     private boolean isFlipped(){
-	return flipped;
+	return _flipped;
     }
 
     private void flip(){
-	flipped= !flipped;
+	_flipped= !_flipped;
     }
 }
