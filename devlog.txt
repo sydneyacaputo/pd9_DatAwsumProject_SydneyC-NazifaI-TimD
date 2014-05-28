@@ -1,21 +1,14 @@
 2014-05-27 
-Got the green light on the project, need to develop a timeline of sorts
+->Got the green light on the project, need to develop a timeline of sorts
+->Tim Diep was added to the project group and added to the google form and repo 
+-> began to create the timeline, will add to the repo
+—> Nazifa Added Interface Pile,along with basic methods and Solitaire, the driver 
+—> Nazifa Added Ranks and edited certain methods 
+-> Tim Added Deck: the main pile from where the player takes the cards from
+—> Tim Added Suits: the four piles that will be sorted
+—> Sydney Added Card class: will be the class that is used to make the array lists, stacks etc..
 
-2014-05-27 
-Tim Diep was added to the project group and added to the google form and repo 
 
-2014-05-27
-began to create the timeline, will add to the repo
-
-2014-05-27 
-Added Interface Pile,along with basic methods and Solitaire, the driver 
-Added Ranks and edited certain methods 
--Nazifa Islam 
-
-2014-05-27
-Added Deck: the main pile from where the player takes the cards from
-Added Suits: the four piles that will be sorted
--Tim Diep
-
-2014-05-27
-Added Card class: will be the class that is used to make the array lists, stacks etc..
+2014-05-28
+—> Sydney modified card class to account for the face cards and better fit the deck and suits classes
+—> added a timeline file 
