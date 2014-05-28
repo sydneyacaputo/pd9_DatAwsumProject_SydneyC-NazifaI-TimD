@@ -3,3 +3,24 @@ Timeline/ To Do List:
 - pile interface 
 	- deck, suits, and ranks will all implement this interface 
 - test the classes 
+	- with test cases, make sure it works
+- start the initial set up 
+	maybe have as a 2D array where the user can indicate the row and column where they want to move it, 
+add a method that if an ace is picked it will automatically go to the 4 suits
+
+
+
+
+
+
+
+
+- finish the project
+
+Add ons once finished
+- how hard to make a timer
+- processing
+- hints 
+-point value
+- lose or win (no more moves)
+
