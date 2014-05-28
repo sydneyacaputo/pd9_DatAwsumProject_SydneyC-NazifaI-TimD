@@ -1,4 +1,13 @@
 2014-05-27 
+Got the green light on the project, need to develop a timeline of sorts
+
+2014-05-27 
+Tim Diep was added to the project group and added to the google form and repo 
+
+2014-05-27
+began to create the timeline, will add to the repo
+
+2014-05-27 
 Added Interface Pile,along with basic methods and Solitaire, the driver 
 Added Ranks and edited certain methods 
 -Nazifa Islam 
