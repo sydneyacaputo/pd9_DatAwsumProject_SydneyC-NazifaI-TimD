@@ -1,7 +1,7 @@
 
 public interface Pile {
 
-    int _size;	
+    int _size;
 	
     Card peek();
 
@@ -12,5 +12,7 @@ public interface Pile {
     int getSize(); 
 
     public String toString();
+    
+    //add isEmpty? 
 	
 }// end interface Pile 
