@@ -2,3 +2,8 @@
 Added Interface Pile,along with basic methods and Solitaire, the driver 
 Added Ranks and edited certain methods 
 -Nazifa Islam 
+
+2014-05-27
+Added Deck: the main pile from where the player takes the cards from
+Added Suits: the four piles that will be sorted
+-Tim Diep
