@@ -1,3 +1,4 @@
 2014-05-27 
 Added Interface Pile,along with basic methods and Solitaire, the driver 
+Added Ranks and edited certain methods 
 -Nazifa Islam 
