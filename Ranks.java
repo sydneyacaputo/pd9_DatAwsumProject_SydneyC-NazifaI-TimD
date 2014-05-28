@@ -1,4 +1,9 @@
+/*
+we should have a discription at the beginning of each file so we all know what it is and what it contains 
 
+should become a linked list
+the ranks is for the 7 piles of cards that the player will order their cards alternating colors 
+*/
 public class Ranks implements Pile {
 	
 	private int _size;
@@ -19,7 +24,7 @@ public class Ranks implements Pile {
 		if ( _size == 0 ) 
 			_head = _tail;
 		else 
-			_tail.getPrev().setNext( _tail ); //have these methods in Card? 
+			_tail.getPrev().setNext( _tail ); //have these methods in Card?, no beause Card is not a linked list... 
 		_size++;
 	}
 	
