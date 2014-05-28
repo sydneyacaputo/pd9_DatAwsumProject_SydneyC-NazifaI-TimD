@@ -14,28 +14,28 @@ import java.io.*;
 
 
 public class Card{
-    private String color;
+    //private String color;
     private String suit;
-    private String value; //we could make these numbers and then convert for the face cards? or just keep as strings, will discuss later 
+    private int value; //we could make these numbers and then convert for the face cards? or just keep as strings, will discuss later 
     private boolean flipped;
 
     //later on we can just have a couple of simple for loops that will set these cards 
-    public Card(String s, String c, String v){
+    public Card(int v, String s){
 	suit= s;
-	color = c;
+	//color = c;
 	value = v;
 	flipped = false;
     }
    
-    private String getColor(){
+    /* private String getColor(){
 	return color;
     }
-
+    */
     private String getSuit(){
 	return suit;
     }
 
-    private String getValue(){
+    private int getValue(){
 	return value;
     }
 
