@@ -18,7 +18,8 @@ public class Deck implements Pile {
 	    else 
 	        add( new Card(i-38,"Diamond") );
 	}
-	
+	//how are we accounting for the different face cards?
+	//also should i exclude the color because that is known by the suit?
 	for ( int i=52; i>0; i-- ) {
 	    int j = Math.random() * i;
 	    Card temp = _deck.get(i);
