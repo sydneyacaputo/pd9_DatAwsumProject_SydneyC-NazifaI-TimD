@@ -1,0 +1,5 @@
+Timeline/ To Do List:
+- make card class
+- pile interface 
+	- deck, suits, and ranks will all implement this interface 
+- test the classes 
