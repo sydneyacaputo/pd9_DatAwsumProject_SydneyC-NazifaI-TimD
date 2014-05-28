@@ -21,7 +21,7 @@ public class Deck implements Pile {
 	//how are we accounting for the different face cards?
 	//also should i exclude the color because that is known by the suit?
 	for ( int i=52; i>0; i-- ) {
-	    int j = Math.random() * i;
+	    int j = (int) Math.random() * i;
 	    Card temp = _deck.get(i);
 	    _deck.set( i, _deck.get(j) );
 	    _deck.set( j, temp );
@@ -39,7 +39,7 @@ public class Deck implements Pile {
 
     public Card remove() {
 	_size--;
-	return _deck.remove();
+	return _deck.remove(0);
     }
 
     public int getSize() {
