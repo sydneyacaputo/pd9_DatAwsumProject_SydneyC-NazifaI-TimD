@@ -1,19 +1,16 @@
 
 public interface Pile {
 
-int _size;	
+    int _size;	
 	
-int peek();
+    Card peek();
 
-Card add();
+    void add( Card c );
 
-void remove();
+    Card remove();
 
-int getSize(); 
+    int getSize(); 
 
-public String toString();
-
-
-
+    public String toString();
 	
 }// end interface Pile 
