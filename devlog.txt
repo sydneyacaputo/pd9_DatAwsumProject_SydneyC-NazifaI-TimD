@@ -1,6 +1,6 @@
 2014-05-27 
-->Got the green light on the project, need to develop a timeline of sorts
-->Tim Diep was added to the project group and added to the google form and repo 
+-> Got the green light on the project, need to develop a timeline of sorts
+-> Tim Diep was added to the project group and added to the google form and repo 
 -> began to create the timeline, will add to the repo
 —> Nazifa Added Interface Pile,along with basic methods and Solitaire, the driver 
 —> Nazifa Added Ranks and edited certain methods 
@@ -14,4 +14,9 @@
 —> added a timeline file 
 -> Tim added a constructor and update method to Solitaire.java
 -> Tim added a main method to Deck for testing
-—>Sydney added a main method to Card for testing 
+—> Sydney added a main method to Card for testing 
+
+2014-05-29
+-> Nazifa added methods to the Card class and altered the Ranks class
+-> Tim and Sydney renamed the files so that each pile has a more informative name
+-> Sydney included more details to the timeline
