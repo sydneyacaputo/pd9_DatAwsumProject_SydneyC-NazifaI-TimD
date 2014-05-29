@@ -62,7 +62,7 @@ public class Deck implements Pile {
 	    for ( int j=i; j<7; j++ )
 		field[j] = remove();
 	}
-    }
+x    }
 
     public static void main( String[] args ) {
 
