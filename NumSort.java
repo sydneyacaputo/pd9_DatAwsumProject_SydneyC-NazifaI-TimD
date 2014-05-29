@@ -1,18 +1,19 @@
 /*
-we should have a discription at the beginning of each file so we all know what it is and what it contains 
-
-should become a linked list
-the ranks is for the 7 piles of cards that the player will order their cards alternating colors 
+ * 
+NumSort is for the 7 piles of cards that the player will sort. The cards will be alternating colors and are organized in a LinkedList<Card>
+ 
 */
 
 import java.util.*;
 
-public class Ranks {
+import javax.smartcardio.Card;
+
+public class NumSort {
 
     private LinkedList<Card> _rank; 
     
     //Constructor 
-    public Ranks() {    	
+    public NumSort() {    	
     	_rank = new LinkedList<Card>();	
     }
 
@@ -46,20 +47,23 @@ public class Ranks {
 	public Card remove() {
 		
 	
-	}
+	}*/
 	
 	public String toString() {
-		String retStr = "HEAD->"; 
-		Card tmp = _head; 
-		while ( tmp !=null ) {
-			//retStr = tmp.getWhateverTheValue + "->";
-			tmp = tmp.getNext(); 
+		String retStr = "TOP-> |"; 
+		Card c;
+		for (int i = 0; i < _rank.size(); i++){
+			c = _rank.get(i);
+			retStr += " suit: " + _suit; 
+			retStr += " value: " + _value;
+			retStr += " flipped: " + _flipped; 
 		}
-		retStr += "NULL";
+		retStr += " | <-BOTTOM";
 		return retStr; 
-	}*/
+	}
+	
 	public static void main ( String[] args) {
-		System.out.println("passed the compiler");
+		
 	}
 	
 }//end class
