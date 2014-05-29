@@ -3,6 +3,8 @@
  */
 public interface Pile {
 	
+	boolean isEmpty(); 
+	
     Card peek(); //peeks the top cards
 
     void add( Card c );
@@ -10,7 +12,5 @@ public interface Pile {
     Card remove();
 
     public String toString();
-    
-    boolean isEmpty(); 
 	
 }// end interface Pile 

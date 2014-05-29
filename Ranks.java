@@ -7,32 +7,26 @@ the ranks is for the 7 piles of cards that the player will order their cards alt
 
 import java.util.*;
 
-public class Ranks implements Pile {
+public class Ranks {
 
     private LinkedList<Card> _rank; 
     
     //Constructor 
- /*   public Ranks() {
-    	
-    	_rank = new LinkedList<Card>();
-	
+    public Ranks() {    	
+    	_rank = new LinkedList<Card>();	
     }
 
-    public boolean isEmpty() {return size() == 0;}
+   public boolean isEmpty() {return _rank.size() == 0;}
 
-    public String checkColor( Card c ) {
-    	
-	String suit = c.getSuit;
-	if ( suit == "Hearts" || suit == "Diamond" ) 
-	    return "red";
-	return "black";
-
+   public String checkColor( Card c ) {
+    		String suit = c.getSuit();
+    		if ( suit == "Heart" || suit == "Diamond" ) 
+    			return "red";
+    		return "black";
     }
     
-    public Card get( int i ) {
-
-	return _rank.get(i);
- 
+/*    public Card get( int i ) {
+    	return _rank.get(i); 
    }
 	
 	public Card peek() {

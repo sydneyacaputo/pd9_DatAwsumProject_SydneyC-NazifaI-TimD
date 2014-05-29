@@ -36,23 +36,23 @@ public class Card{
 	_flipped = false;
     }
    
-    
-    private String getActVal(){
+    //I changed the accessor methods to public from private so that other files in the folder can use it - Nazifa 
+    public String getActVal(){
 	return _actVal;
     }
-    private String getSuit(){
+    public String getSuit(){
 	return _suit;
     }
 
-    private int getValue(){
+    public int getValue(){
 	return _value;
     }
 
-    private boolean isFlipped(){
+    public boolean isFlipped(){
 	return _flipped;
     }
 
-    private void flip(){
+    public void flip(){
 	_flipped= !_flipped;
     }
 
