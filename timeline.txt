@@ -18,11 +18,18 @@ Timeline/ To Do List:
 	maybe have as a 2D array where the user can indicate the row and column where they want to move it, 
 add a method that if an ace is picked it will automatically go to the 4 suits
 
-->
+->user interaction
+	- be able to see a grid type structure
+	- enter the row, column of the card and the card/cards they want to move and then select the location that they want to move it to
+	- if these moves are not valid they should get a message saying “invalid”
+	- maybe begin the game with some rules?
+	- move counter 
 
 
 
-
+- SolitaireRunner
+	-make a toString / print method
+		(display like a 2D array) 
 
 
 - finish the project
