@@ -46,6 +46,7 @@ public class Deck implements Pile {
 	return _size;
     }
 
+    /*
     public String toString() {
 	String ret = "";
 	for ( Card c : _deck )
@@ -53,4 +54,25 @@ public class Deck implements Pile {
 	ret = ret.substring( 0, _deck.size()*2 - 1 );
 	return ret;
     }
+    */
+
+    public void deal( Ranks r1, Ranks r2, Ranks r3, Ranks r4, Ranks r5,Ranks r6,Ranks r7 ) {
+        Ranks[] field = { r1, r2, r3, r4, r5, r6, r7 };
+	for ( int i=0; i<7; i++ ) {
+	    for ( int j=i; j<7; j++ )
+		field[j] = remove();
+	}
+    }
+
+    public static void main( String[] args ) {
+
+	Deck test = new Deck();
+	System.out.println(test);
+	
+	System.out.println(test.peek());
+	System.out.println(test.remove());
+	System.out.println(test);
+
+    }
+	
 }
