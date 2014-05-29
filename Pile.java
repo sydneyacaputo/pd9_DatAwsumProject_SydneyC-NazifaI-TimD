@@ -1,18 +1,16 @@
-
+/*
+ * Pile is an interface that is implemented in classes DrawPile.java, SuitSort.java, and NumSort.java  
+ */
 public interface Pile {
-
-    int _size;
 	
-    Card peek();
+    Card peek(); //peeks the top cards
 
     void add( Card c );
 
     Card remove();
 
-    int getSize(); 
-
     public String toString();
     
-    //add isEmpty? 
+    boolean isEmpty(); 
 	
 }// end interface Pile 

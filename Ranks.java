@@ -4,20 +4,24 @@ we should have a discription at the beginning of each file so we all know what i
 should become a linked list
 the ranks is for the 7 piles of cards that the player will order their cards alternating colors 
 */
+
+import java.util.*;
+
 public class Ranks implements Pile {
 
     private LinkedList<Card> _rank; 
     
-    public Ranks {
-	_rank = new LinkedList<Card>();
+    //Constructor 
+ /*   public Ranks() {
+    	
+    	_rank = new LinkedList<Card>();
+	
     }
 
-    public boolean isEmpty() {
-	
-	return size() == 0;
-    }
+    public boolean isEmpty() {return size() == 0;}
 
     public String checkColor( Card c ) {
+    	
 	String suit = c.getSuit;
 	if ( suit == "Hearts" || suit == "Diamond" ) 
 	    return "red";
@@ -46,25 +50,12 @@ public class Ranks implements Pile {
 	}
 	
 	public Card remove() {
-		Card ret = _tail; 
-		//if isEmpty? 
-		if ( size() == 1) {
-			_head = _tail = null; 
-		}
-		else {
-			_tail = _tail.getPrev(); 
-			_tail.setNext( null );
-		}
-		size--;
-		return ret; 
-	}
+		
 	
-	int getSize() {
-		return _size; 
 	}
 	
 	public String toString() {
-		String retStr  "HEAD->"; 
+		String retStr = "HEAD->"; 
 		Card tmp = _head; 
 		while ( tmp !=null ) {
 			//retStr = tmp.getWhateverTheValue + "->";
@@ -72,6 +63,9 @@ public class Ranks implements Pile {
 		}
 		retStr += "NULL";
 		return retStr; 
+	}*/
+	public static void main ( String[] args) {
+		System.out.println("passed the compiler");
 	}
 	
 }//end class
