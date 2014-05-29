@@ -5,27 +5,44 @@ should become a linked list
 the ranks is for the 7 piles of cards that the player will order their cards alternating colors 
 */
 public class Ranks implements Pile {
+
+    private LinkedList<Card> _rank; 
+    
+    public Ranks {
+	_rank = new LinkedList<Card>();
+    }
+
+    public boolean isEmpty() {
 	
-	private int _size;
-	private Card _head, _tail; 
-	
-	public Ranks {
-		_size = 0;
-		_head = _tail = null;
-	}
+	return size() == 0;
+    }
+
+    public String checkColor( Card c ) {
+	String suit = c.getSuit;
+	if ( suit == "Hearts" || suit == "Diamond" ) 
+	    return "red";
+	return "black";
+
+    }
+    
+    public Card get( int i ) {
+
+	return _rank.get(i);
+ 
+   }
 	
 	public Card peek() {
-		return _end
+	    return _rank.peekLast();
 	}
 	
 	void add( Card c ) {
-		_tail = new Card(); 
+	    if ( peek().checkColor().equals( c.checkColor() )
+		 && peek().getValue() ) {
 		
-		if ( _size == 0 ) 
-			_head = _tail;
-		else 
-			_tail.getPrev().setNext( _tail ); //have these methods in Card?, no beause Card is not a linked list... 
-		_size++;
+	    }
+	    
+	    _rank.add( c ); 
+		 
 	}
 	
 	public Card remove() {
