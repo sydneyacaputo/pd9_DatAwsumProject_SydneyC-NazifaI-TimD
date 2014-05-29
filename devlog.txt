@@ -14,3 +14,4 @@
 —> added a timeline file 
 -> Tim added a constructor and update method to Solitaire.java
 -> Tim added a main method to Deck for testing
+—>Sydney added a main method to Card for testing 
