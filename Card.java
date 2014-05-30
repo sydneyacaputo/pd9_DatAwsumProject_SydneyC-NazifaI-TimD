@@ -26,13 +26,13 @@ public class Card{
 	if (1< v && v <= 10)
 	    _actVal=""+_value;
 	else if (v ==11)
-	    _actVal= "Jack";
+	    _actVal= "J";
 	else if (v ==12)
-	    _actVal= "Queen";
+	    _actVal= "Q";
 	else if (v ==13)
-	    _actVal= "King";
+	    _actVal= "K";
 	else
-	    _actVal="Ace";
+	    _actVal="A";
 	_flipped = false;
     }
    
@@ -58,7 +58,7 @@ public class Card{
     }
 
     public String toString() {
-	return _actVal + " of " + _suit;
+	return _suit + _actVal;
     }
     // Need to change this for when it's flipped or not, we'll do that later
 

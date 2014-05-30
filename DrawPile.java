@@ -10,26 +10,39 @@ public class DrawPile implements Pile {
 	
 	for ( int i=0; i<52; i++ ) {
 	    if ( i < 13 )
-	        add( new Card(i+1,"Spade") );
+	        add( new Card(i+1,"S") );
 	    else if ( i < 26 )
-	        add( new Card(i-12,"Heart") );
+	        add( new Card(i-12,"H") );
 	    else if ( i < 39 )
-	        add( new Card(i-25,"Club") );
+	        add( new Card(i-25,"C") );
 	    else 
-	        add( new Card(i-38,"Diamond") );
+	        add( new Card(i-38,"D") );
 	}
 	//how are we accounting for the different face cards?
 	//also should i exclude the color because that is known by the suit?
-	for ( int k=51; k>=0; k-- ) {
-	    int j = (int) Math.random() * k;
-	    Card temp = _deck.get(k);
-	    _deck.set( k, _deck.get(j) );
-	    _deck.set( j, temp );
-	}	    
+    
+	shuffle();
     }
 
+    public void shuffle() {
+	for ( int k=51; k>=0; k-- ) {
+	    int j = (int) (Math.random() * 51);
+	    Card temp = _deck.get(k);
+	    System.out.println("temp: " + temp);
+	    _deck.set( k, _deck.get(j) );
+	    System.out.println(_deck.get(k));
+	    _deck.set( j, temp );
+	    System.out.println(_deck.get(j));
+	    }
+	System.out.println("deck: " + _deck);
+    }
+	    
     public Card peek() {
-	return _deck.get( _size - 1 );
+	return _deck.get(0);
+    }
+
+    public Card get( int index ) {
+	return _deck.get(index);
     }
 
     public void add( Card c ) {
@@ -68,11 +81,14 @@ public class DrawPile implements Pile {
     public static void main( String[] args ) {
 
 	DrawPile test = new DrawPile();
-	System.out.println(test);
+
+	System.out.println("first " + test.get(0));
+	System.out.println("second " + test.get(1));
+	System.out.println("third " + test.get(2));
 	
-	System.out.println(test.peek());
+	/*	System.out.println(test.peek());
 	System.out.println(test.remove());
-	System.out.println(test);
+	System.out.println(test); */
 
     }
 	
