@@ -69,10 +69,10 @@ public class NumSort implements Pile{
 		return retStr; 
 	}
 	
-	public static void main ( String[] args ) {
+/*	public static void main ( String[] args ) {
 		 NumSort rank = new NumSort();
-	/*	 System.out.println("Testing toString... ");
-		 System.out.println(rank); */
+		 System.out.println("Testing toString... ");
+		 System.out.println(rank); 
 		 Card t1 = new Card(5,"Spade" );
 		 Card t2 = new Card(4,"Heart" );
 		 Card t3 = new Card(3,"Club" );
@@ -102,6 +102,6 @@ public class NumSort implements Pile{
 		 System.out.println(rank);
 		 
 		
-	}//end main
+	}//end main */
 	
 }//end class
