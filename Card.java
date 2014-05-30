@@ -57,6 +57,11 @@ public class Card{
 	_flipped= !_flipped;
     }
 
+    public String toString() {
+	return _actVal + " of " + _suit;
+    }
+    // Need to change this for when it's flipped or not, we'll do that later
+
   public static void main( String[] args ) {
 
       Card test = new Card(5,"Spade" );
