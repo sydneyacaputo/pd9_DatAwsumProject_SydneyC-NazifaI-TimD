@@ -21,3 +21,4 @@
 -> Tim and Sydney renamed the files so that each pile has a more informative name
 -> Sydney included more details to the timeline
 -> Tim tested DrawPile.java, shuffling is incomplete though
+-> Nazifa renamed Ranks to NumSort and tested the class (NumSort is complete) 
