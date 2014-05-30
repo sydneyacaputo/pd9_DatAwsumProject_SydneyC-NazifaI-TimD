@@ -6,11 +6,9 @@ Timeline/ To Do List:
 - make card class ~~
 - pile interface ~~
 	- drawpile
-		- turn into a linked list **
 	- suitsort
-		- turn into a linked list**
 	- numSort 
-		- need to turn into a linked list **
+		- need to turn into a linked list ~~
 - test the classes 
 	- with test cases, make sure it works
 	- NEED TO FIX RANKS FOR LINKED LIST  
@@ -28,9 +26,10 @@ add a method that if an ace is picked it will automatically go to the 4 suits
 
 
 - SolitaireRunner
-	-make a toString / print method
-		(display like a 2D array) 
-
+	- update() (display like a 2D array) 
+	- deal() (to add cards to the NumSorted Piles)
+	- turn() 
+		- method to check for unflipped cards on the top of NumSorted
 
 - finish the project
 
