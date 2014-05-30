@@ -2,21 +2,22 @@
 -> Got the green light on the project, need to develop a timeline of sorts
 -> Tim Diep was added to the project group and added to the google form and repo 
 -> began to create the timeline, will add to the repo
-—> Nazifa Added Interface Pile,along with basic methods and Solitaire, the driver 
-—> Nazifa Added Ranks and edited certain methods 
--> Tim Added Deck: the main pile from where the player takes the cards from
-—> Tim Added Suits: the four piles that will be sorted
-—> Sydney Added Card class: will be the class that is used to make the array lists, stacks etc..
+-> Nazifa added Interface Pile,along with basic methods and Solitaire, the driver 
+-> Nazifa added Ranks and edited certain methods 
+-> Tim added Deck: the main pile from where the player takes the cards from
+-> Tim added Suits: the four piles that will be sorted
+-> Sydney added Card class: will be the class that is used to make the array lists, stacks etc..
 
 
 2014-05-28
-—> Sydney modified card class to account for the face cards and better fit the deck and suits classes
-—> added a timeline file 
+-> Sydney modified card class to account for the face cards and better fit the deck and suits classes
+-> added a timeline file 
 -> Tim added a constructor and update method to Solitaire.java
 -> Tim added a main method to Deck for testing
-—> Sydney added a main method to Card for testing 
+-> Sydney added a main method to Card for testing 
 
 2014-05-29
 -> Nazifa added methods to the Card class and altered the Ranks class
 -> Tim and Sydney renamed the files so that each pile has a more informative name
 -> Sydney included more details to the timeline
+-> Tim tested DrawPile.java, shuffling is incomplete though

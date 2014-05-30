@@ -20,10 +20,10 @@ public class DrawPile implements Pile {
 	}
 	//how are we accounting for the different face cards?
 	//also should i exclude the color because that is known by the suit?
-	for ( int i=52; i>0; i-- ) {
-	    int j = (int) Math.random() * i;
-	    Card temp = _deck.get(i);
-	    _deck.set( i, _deck.get(j) );
+	for ( int k=51; k>=0; k-- ) {
+	    int j = (int) Math.random() * k;
+	    Card temp = _deck.get(k);
+	    _deck.set( k, _deck.get(j) );
 	    _deck.set( j, temp );
 	}	    
     }
@@ -46,21 +46,22 @@ public class DrawPile implements Pile {
 	return _size;
     }
 
-    /*
+    public boolean isEmpty() {
+	return _size == 0;
+    }
+
     public String toString() {
 	String ret = "";
 	for ( Card c : _deck )
-	    ret = ret + c + " ";
-	ret = ret.substring( 0, _deck.size()*2 - 1 );
+	    ret = ret + c + ", ";
 	return ret;
     }
-    */
 
-    public void deal( Ranks r1, Ranks r2, Ranks r3, Ranks r4, Ranks r5, Ranks r6, Ranks r7 ) {
-        Ranks[] field = { r1, r2, r3, r4, r5, r6, r7 };
+    public void deal( NumSort r1, NumSort r2, NumSort r3, NumSort r4, NumSort r5, NumSort r6, NumSort r7 ) {
+        NumSort[] field = { r1, r2, r3, r4, r5, r6, r7 };
 	for ( int i=0; i<7; i++ ) {
 	    for ( int j=i; j<7; j++ )
-		field[j] = remove();
+		field[j].add(remove());
 	}
     }
 
