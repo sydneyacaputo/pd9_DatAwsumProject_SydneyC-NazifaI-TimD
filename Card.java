@@ -36,7 +36,8 @@ public class Card{
 	_flipped = false;
     }
    
-    //I changed the accessor methods to public from private so that other files in the folder can use it - Nazifa 
+    //I changed the accessor methods to public from private so that other files in the folder can use it 
+    //Also, can I add some mutators? - Nazifa
     public String getActVal(){
 	return _actVal;
     }
