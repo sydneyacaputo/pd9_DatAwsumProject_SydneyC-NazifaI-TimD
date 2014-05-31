@@ -1,27 +1,32 @@
 public class SolitaireRunner {
-    private Deck cardsLeft;
-    private Suits spade, heart, club, diamond;
-    private Ranks r1, r2, r3, r4, r5, r6, r7;
+    private DrawPile cardsLeft;
+    private SuitSort spade, heart, club, diamond;
+    private NumSort r1, r2, r3, r4, r5, r6, r7;
 
     public SolitaireRunner() {
-	cardsLeft = new Deck();
+	cardsLeft = new DrawPile();
 
-	spade = new Suits();
-	heart = new Suits();
-	club = new Suits();
-	diamond = new Suits();
+	spade = new SuitSort();
+	heart = new SuitSort();
+	club = new SuitSort();
+	diamond = new SuitSort();
     
-	r1 = new Ranks();
-	r2 = new Ranks();
-	r3 = new Ranks();
-	r4 = new Ranks();
-	r5 = new Ranks();
-	r6 = new Ranks();
-	r7 = new Ranks();
+	r1 = new NumSort();
+	r2 = new NumSort();
+	r3 = new NumSort();
+	r4 = new NumSort();
+	r5 = new NumSort();
+	r6 = new NumSort();
+	r7 = new NumSort();
 
 	cardsLeft.deal(r1, r2, r3, r4, r5, r6, r7);
     }
+    public setUp (){
+	//this is to set up the initial board
+	
 
+
+    }
     public String update() {
 	String ret = "";
 	ret = ret + "Cards remaining in the deck: " + cardsLeft.getSize();

@@ -61,7 +61,7 @@ public class Card{
 	return _suit + _actVal;
     }
     // Need to change this for when it's flipped or not, we'll do that later
-
+    
   public static void main( String[] args ) {
 
       Card test = new Card(5,"Spade" );
@@ -69,6 +69,7 @@ public class Card{
 
 	System.out.println(test.getActVal());
 	System.out.println(test.isFlipped());
+	
 	
   }
 
