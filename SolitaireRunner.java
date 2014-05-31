@@ -23,7 +23,15 @@ public class SolitaireRunner {
     }
     public setUp (){
 	//this is to set up the initial board
-	
+	//need to decide if this actually going to be a 2D array
+	// if so will start setup like this:
+	//WAIT we cant make a 2D array to hold everything because it will not
+	// be able to take the different type
+	int outline[][] = new int[20][7];
+	for(int x =0; x<20; x++)
+	    outline[x][0]=x+1;
+	for(int y=1; y<8; y++)
+	    outlin[0][y]=y;
 
 
     }
