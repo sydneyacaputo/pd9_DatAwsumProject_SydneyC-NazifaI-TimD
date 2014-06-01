@@ -16,7 +16,7 @@ Timeline/ To Do List:
 	maybe have as a 2D array where the user can indicate the row and column where they want to move it, 
 add a method that if an ace is picked it will automatically go to the 4 suits
 
-->user interaction
+-> user interaction
 	- be able to see a grid type structure
 	- enter the row, column of the card and the card/cards they want to move and then select the location that they want to move it to
 	- if these moves are not valid they should get a message saying “invalid”
@@ -29,7 +29,9 @@ add a method that if an ace is picked it will automatically go to the 4 suits
 	- update() (display like a 2D array) 
 	- deal() (to add cards to the NumSorted Piles)
 	- turn() 
-		- method to check for unflipped cards on the top of NumSorted
+		- method to check for unflipped cards on the top of 
+NumSorted
+	- need to link the board to the actual piles
 
 - finish the project
 

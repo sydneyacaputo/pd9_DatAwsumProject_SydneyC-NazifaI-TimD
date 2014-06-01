@@ -8,7 +8,6 @@
 -> Tim added Suits: the four piles that will be sorted
 -> Sydney added Card class: will be the class that is used to make the array lists, stacks etc..
 
-
 2014-05-28
 -> Sydney modified card class to account for the face cards and better fit the deck and suits classes
 -> added a timeline file 
@@ -22,3 +21,10 @@
 -> Sydney included more details to the timeline
 -> Tim tested DrawPile.java, shuffling is incomplete though
 -> Nazifa renamed Ranks to NumSort and tested the class (NumSort is complete) 
+
+2014-05-30
+
+2014-05-31
+
+2014-06-01
+-> Tim worked on the update() and constructor methods in SolitaireRunner, adding the basic framework for the visuals

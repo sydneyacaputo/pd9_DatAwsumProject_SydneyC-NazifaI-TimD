@@ -2,6 +2,7 @@ public class SolitaireRunner {
     private DrawPile cardsLeft;
     private SuitSort spade, heart, club, diamond;
     private NumSort r1, r2, r3, r4, r5, r6, r7;
+    private String[][] board;
 
     public SolitaireRunner() {
 	cardsLeft = new DrawPile();
@@ -20,25 +21,31 @@ public class SolitaireRunner {
 	r7 = new NumSort();
 
 	cardsLeft.deal(r1, r2, r3, r4, r5, r6, r7);
+
+        board = new String[20][8];
+	for ( int r=0; r<board.length; r++ ) 
+	    board[r][0] = "" + (r+1);
+	for ( int c=0; c<board[0].length; c++ ) 
+	    board[0][c] = "" + (c+1);
     }
-    public setUp (){
-	//this is to set up the initial board
-	//need to decide if this actually going to be a 2D array
-	// if so will start setup like this:
-	//WAIT we cant make a 2D array to hold everything because it will not
-	// be able to take the different type
-	int outline[][] = new int[20][7];
-	for(int x =0; x<20; x++)
-	    outline[x][0]=x+1;
-	for(int y=1; y<8; y++)
-	    outlin[0][y]=y;
 
 
     }
-    public String update() {
-	String ret = "";
-	ret = ret + "Cards remaining in the deck: " + cardsLeft.getSize();
-	ret = 
+    public void update() {
+        System.out.println("Cards remaining in the deck: " + cardsLeft.getSize());
+        System.out.println("Sorted piles: " + spade + " | " + heart + " | " club + " | " + diamond);
+
+	String output = "";
+        for ( int r=0; r<board.length; r++ ) {
+            for ( int c=0; c<board[0].length; c++ ) {
+                output += " " + board[r][c];
+            }
+            output += "\n";
+        }
+	System.out.println(output);
+    } // needs to be tweaked
+
+
     public static void main(String[] args) {
 	System.out.println("HELLO, THE GAME IS BEGINNING.")
 	    }//end main 
