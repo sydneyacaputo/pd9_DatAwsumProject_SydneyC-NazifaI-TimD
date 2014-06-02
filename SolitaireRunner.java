@@ -1,16 +1,16 @@
 public class SolitaireRunner {
-    private DrawPile cardsLeft;
+    private DrawPile deck;
     private SuitSort spade, heart, club, diamond;
     private NumSort r1, r2, r3, r4, r5, r6, r7;
     private String[][] board;
 
     public SolitaireRunner() {
-	cardsLeft = new DrawPile();
+	deck = new DrawPile();
 
-	spade = new SuitSort();
-	heart = new SuitSort();
-	club = new SuitSort();
-	diamond = new SuitSort();
+	spade = new SuitSort("Spade");
+	heart = new SuitSort("Heart");
+	club = new SuitSort("Club");
+	diamond = new SuitSort("Diamond");
     
 	r1 = new NumSort();
 	r2 = new NumSort();
@@ -20,7 +20,7 @@ public class SolitaireRunner {
 	r6 = new NumSort();
 	r7 = new NumSort();
 
-	cardsLeft.deal(r1, r2, r3, r4, r5, r6, r7);
+	deck.deal(r1, r2, r3, r4, r5, r6, r7);
 
         board = new String[20][8];
 	for ( int r=0; r<board.length; r++ ) 
@@ -30,8 +30,8 @@ public class SolitaireRunner {
     }
 
     public void update() {
-        System.out.println("Cards remaining in the deck: " + cardsLeft.getSize());
-        System.out.println("Sorted piles: " + spade + " | " + heart + " | " club + " | " + diamond);
+        System.out.println("Cards remaining in the deck: " + deck.getSize());
+        System.out.println("Sorted piles: " + spade + " | " + heart + " | " + club + " | " + diamond);
 
 	String output = "";
         for ( int r=0; r<board.length; r++ ) {

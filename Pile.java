@@ -3,8 +3,6 @@
  */
 public interface Pile {
 	
-	boolean isEmpty(); 
-	
     Card peek(); //peeks the top cards
 
     void add( Card c );
