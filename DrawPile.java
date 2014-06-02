@@ -28,13 +28,13 @@ public class DrawPile implements Pile {
 	for ( int k=51; k>=0; k-- ) {
 	    int j = (int) (Math.random() * 51);
 	    Card temp = _deck.get(k);
-	    System.out.println("temp: " + temp);
+	    // System.out.println("temp: " + temp);
 	    _deck.set( k, _deck.get(j) );
-	    System.out.println(_deck.get(k));
+	    // System.out.println(_deck.get(k));
 	    _deck.set( j, temp );
-	    System.out.println(_deck.get(j));
+	    // System.out.println(_deck.get(j));
 	    }
-	System.out.println("deck: " + _deck);
+	// System.out.println("deck: " + _deck);
     }
 	    
     public Card peek() {

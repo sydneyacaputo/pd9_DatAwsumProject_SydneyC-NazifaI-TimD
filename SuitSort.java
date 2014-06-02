@@ -33,7 +33,13 @@ public class SuitSort implements Pile {
 	return _size;
     }
 
-    public String toString() {        
+    public String toString() {  
+	if ( isEmpty() )
+	    return "   ";
 	return peek().toString();
+    }
+
+    public boolean isEmpty() {
+	return _pile.isEmpty();
     }
 }

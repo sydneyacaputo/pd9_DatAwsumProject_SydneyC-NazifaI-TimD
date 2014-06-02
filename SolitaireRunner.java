@@ -23,14 +23,23 @@ public class SolitaireRunner {
 	deck.deal(r1, r2, r3, r4, r5, r6, r7);
 
         board = new String[20][8];
-	for ( int r=0; r<board.length; r++ ) 
-	    board[r][0] = "" + (r+1);
-	for ( int c=0; c<board[0].length; c++ ) 
-	    board[0][c] = "" + (c+1);
+	for ( int r=0; r<board.length; r++ ) {
+	    if ( r < 10 )
+		board[r][0] = "0" + r;
+	    else
+		board[r][0] = "" + r;
+	}
+	for ( int c=0; c<board[0].length; c++ ) {
+	    if ( c < 10 )
+		board[0][c] = "0" + c;
+	    else 
+		board[0][c] = "" + c;
+	}
     }
 
     public void update() {
         System.out.println("Cards remaining in the deck: " + deck.getSize());
+        System.out.println("               S  |  H  |  C  |  D ");
         System.out.println("Sorted piles: " + spade + " | " + heart + " | " + club + " | " + diamond);
 
 	String output = "";
@@ -46,5 +55,8 @@ public class SolitaireRunner {
 
     public static void main(String[] args) {
 	System.out.println("HELLO, THE GAME IS BEGINNING.");
+
+	SolitaireRunner s = new SolitaireRunner();
+	s.update();
     }//end main 
 }//end class SolitaireRunner 
