@@ -29,8 +29,6 @@ public class SolitaireRunner {
 	    board[0][c] = "" + (c+1);
     }
 
-
-    }
     public void update() {
         System.out.println("Cards remaining in the deck: " + cardsLeft.getSize());
         System.out.println("Sorted piles: " + spade + " | " + heart + " | " club + " | " + diamond);
@@ -47,6 +45,6 @@ public class SolitaireRunner {
 
 
     public static void main(String[] args) {
-	System.out.println("HELLO, THE GAME IS BEGINNING.")
-	    }//end main 
+	System.out.println("HELLO, THE GAME IS BEGINNING.");
+    }//end main 
 }//end class SolitaireRunner 
