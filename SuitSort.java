@@ -16,7 +16,7 @@ public class SuitSort implements Pile {
     }
 
     public void add( Card c ) {
-        if ( c.getValue == _pile.peek().getValue() + 1
+        if ( c.getValue() == _pile.peek().getValue() + 1
 	     && c.getSuit().equals( _suit ) ) {
 	    _pile.push(c);
 	    _size++;
@@ -34,6 +34,6 @@ public class SuitSort implements Pile {
     }
 
     public String toString() {        
-	return peek();
+	return peek().toString();
     }
 }

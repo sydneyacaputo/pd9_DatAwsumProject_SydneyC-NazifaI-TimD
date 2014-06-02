@@ -7,10 +7,10 @@ public class SolitaireRunner {
     public SolitaireRunner() {
 	deck = new DrawPile();
 
-	spade = new SuitSort();
-	heart = new SuitSort();
-	club = new SuitSort();
-	diamond = new SuitSort();
+	spade = new SuitSort("Spade");
+	heart = new SuitSort("Heart");
+	club = new SuitSort("Club");
+	diamond = new SuitSort("Diamond");
     
 	r1 = new NumSort();
 	r2 = new NumSort();
