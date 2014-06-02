@@ -25,6 +25,7 @@
 2014-05-30
 
 2014-05-31
+->Sydney worked on the setup and altered the class names to match the new classes in SolitaireRunner
 
 2014-06-01
 -> Tim worked on the update() and constructor methods in SolitaireRunner, adding the basic framework for the visuals
