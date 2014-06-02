@@ -29,3 +29,12 @@
 
 2014-06-01
 -> Tim worked on the update() and constructor methods in SolitaireRunner, adding the basic framework for the visuals
+
+2014-06-02
+->During lab we ran the SolitaireRunner and tackled the errors in it
+	 - deleted isEmpty() from pile interface
+	 - fixed the SuitSort contructors so they were correctly being applied
+	 - trying to print the board, success!
+	 - added suit indicators above the sorted suit piles
+	 
+	 
