@@ -35,6 +35,11 @@ public class SolitaireRunner {
 	    else 
 		board[0][c] = "" + c;
 	}
+	// System.out.println(r1);	
+	// System.out.println(r2);
+
+
+	merge();
     }
 
     public void update() {
@@ -52,6 +57,22 @@ public class SolitaireRunner {
 	System.out.println(output);
     } // needs to be tweaked
 
+    public void merge() {
+	for ( int a=0; a<r1.getSize(); a++ ) 
+	    board[1][a+1] = r1.get(a).toString();
+	for ( int b=0; b<r2.getSize(); b++ ) 
+	    board[1][b+1] = r2.get(b).toString();
+	for ( int c=0; c<r3.getSize(); c++ ) 
+	    board[1][c+1] = r3.get(c).toString();
+	for ( int d=0; d<r4.getSize(); d++ ) 
+	    board[1][d+1] = r4.get(d).toString();
+	for ( int e=0; e<r5.getSize(); e++ ) 
+	    board[1][e+1] = r5.get(e).toString();
+	for ( int f=0; f<r6.getSize(); f++ ) 
+	    board[1][f+1] = r6.get(f).toString();
+	for ( int g=0; g<r7.getSize(); g++ ) 
+	    board[1][g+1] = r7.get(g).toString();
+    }
 
     public static void main(String[] args) {
 	System.out.println("HELLO, THE GAME IS BEGINNING.");

@@ -25,7 +25,14 @@ public class NumSort implements Pile{
  		return "black";
    	}
 
-	
+    public int getSize() {
+	return _rank.size();
+    }
+
+    public Card get( int index ) {
+	return _rank.get(index);
+    }
+
 	public Card peek() {
 		if ( isEmpty() ) return null;
 		
@@ -39,7 +46,7 @@ public class NumSort implements Pile{
 	 * When Deck deals out the cards at random in the beginning of the game, add() must account for it 
 	 */
 	public void add( Card c ) {
-		if ( isEmpty() || peek().isFlipped() ) {
+	    if ( isEmpty() || !(peek().isFaceUp()) ) {
 			_rank.add( c );
 		}
 		else if ( checkColor( peek() ).equals( checkColor( c ) ) //if this card and the last card are not alternating

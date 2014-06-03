@@ -17,7 +17,7 @@ public class Card{
     private String _suit;
     private int _value; 
     private String _actVal;
-    private boolean _flipped;
+    private boolean _faceUp;
 
     //later on we can just have a couple of simple for loops that will set these cards 
     public Card(int v, String s){
@@ -33,7 +33,7 @@ public class Card{
 	    _actVal= "K";
 	else
 	    _actVal="A";
-	_flipped = false;
+	_faceUp = false;
     }
    
     //I changed the accessor methods to public from private so that other files in the folder can use it 
@@ -49,15 +49,17 @@ public class Card{
 	return _value;
     }
 
-    public boolean isFlipped(){
-	return _flipped;
+    public boolean isFaceUp(){
+	return _faceUp;
     }
 
     public void flip(){
-	_flipped= !_flipped;
+	_faceUp= !_faceUp;
     }
 
     public String toString() {
+	if ( !isFaceUp() ) 
+	    return " # ";
 	return _suit + _actVal;
     }
     // Need to change this for when it's flipped or not, we'll do that later
@@ -68,7 +70,7 @@ public class Card{
       System.out.println(test.getSuit());
 
 	System.out.println(test.getActVal());
-	System.out.println(test.isFlipped());
+	System.out.println(test.isFaceUp());
 	
 	
   }
