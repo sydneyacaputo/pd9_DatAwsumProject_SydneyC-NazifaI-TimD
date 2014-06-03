@@ -36,5 +36,13 @@
 	 - fixed the SuitSort contructors so they were correctly being applied
 	 - trying to print the board, success!
 	 - added suit indicators above the sorted suit piles
-	 
+2014-06-03
+-> During Lab we
+	- worked on the initial setup of the board
+		- dealt cards to NumSort 
+	- tried to put numSort into the arrayList 
+	- altered the toString, checking isFlipped// changed _flipped to _faceup and isFlipped to isFaceUp
+	- accounted for face up or face down when being dealt out 
+	0 added getsize to NumSort 
+	- YAY kind of got deal to work, one row DOWN! :) 
 	 
