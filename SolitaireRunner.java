@@ -7,6 +7,8 @@ public class SolitaireRunner {
     private NumSort r1, r2, r3, r4, r5, r6, r7;
     private String[][] board;
 
+    Scanner s = new Scanner(System.in);
+
     public SolitaireRunner() {
 	deck = new DrawPile();
 
@@ -105,10 +107,28 @@ public class SolitaireRunner {
 	}
     }
 
+    public boolean checkComplete() {
+	if ( spade.peek().equals("SK") &&
+	     heart.peek().equals("HK") &&
+	     club.peek().equals("CK") &&
+	     diamond.peek().equals("DK") )
+	    return true;
+	return false;
+    }
+
+    public void turn() {
+	update();
+	System.out.print("Choose a card (row,col): ");
+    }
+
     public static void main(String[] args) {
 	System.out.println("HELLO, THE GAME IS BEGINNING.");
 
 	SolitaireRunner s = new SolitaireRunner();
-	s.update();
+	// s.update();
+
+	while ( !checkComplete() ) {
+	    turn();
+	}
     }//end main 
 }//end class SolitaireRunner 
