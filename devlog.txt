@@ -48,4 +48,7 @@
 -> Tim tweaked the merge() method to properly show each NumSort pile in the board
 
 2014-06-04
--> During lab we were able to get rid of the "nulls" being shown by the board when there were no cards there
+-> During lab we:
+   	- got rid of the "nulls" being shown by the board when there were no cards there
+	- created a checkComplete() method to see if the game is over
+	- started the turn() method
