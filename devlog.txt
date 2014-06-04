@@ -31,13 +31,13 @@
 -> Tim worked on the update() and constructor methods in SolitaireRunner, adding the basic framework for the visuals
 
 2014-06-02
-->During lab we ran the SolitaireRunner and tackled the errors in it
+-> During lab we ran the SolitaireRunner and tackled the errors in it
 	 - deleted isEmpty() from pile interface
 	 - fixed the SuitSort contructors so they were correctly being applied
 	 - trying to print the board, success!
 	 - added suit indicators above the sorted suit piles
 2014-06-03
--> During Lab we
+-> During Lab we:
 	- worked on the initial setup of the board
 		- dealt cards to NumSort 
 	- tried to put numSort into the arrayList 
@@ -45,4 +45,4 @@
 	- accounted for face up or face down when being dealt out 
 	0 added getsize to NumSort 
 	- YAY kind of got deal to work, one row DOWN! :) 
-	 
+-> Tim tweaked the merge() method to properly show each NumSort pile in the board

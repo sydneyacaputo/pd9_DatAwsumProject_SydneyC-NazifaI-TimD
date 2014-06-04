@@ -1,4 +1,7 @@
+// This will be the main class from which the game is run
+
 public class SolitaireRunner {
+
     private DrawPile deck;
     private SuitSort spade, heart, club, diamond;
     private NumSort r1, r2, r3, r4, r5, r6, r7;
@@ -58,20 +61,20 @@ public class SolitaireRunner {
     } // needs to be tweaked
 
     public void merge() {
-	for ( int a=0; a<r1.getSize(); a++ ) 
-	    board[1][a+1] = r1.get(a).toString();
-	for ( int b=0; b<r2.getSize(); b++ ) 
-	    board[1][b+1] = r2.get(b).toString();
-	for ( int c=0; c<r3.getSize(); c++ ) 
-	    board[1][c+1] = r3.get(c).toString();
+	for ( int a=0; a<r7.getSize(); a++ ) 
+	    board[a+1][1] = r7.get(a).toString();
+	for ( int b=0; b<r6.getSize(); b++ ) 
+	    board[b+1][2] = r6.get(b).toString();
+	for ( int c=0; c<r5.getSize(); c++ ) 
+	    board[c+1][3] = r5.get(c).toString();
 	for ( int d=0; d<r4.getSize(); d++ ) 
-	    board[1][d+1] = r4.get(d).toString();
-	for ( int e=0; e<r5.getSize(); e++ ) 
-	    board[1][e+1] = r5.get(e).toString();
-	for ( int f=0; f<r6.getSize(); f++ ) 
-	    board[1][f+1] = r6.get(f).toString();
-	for ( int g=0; g<r7.getSize(); g++ ) 
-	    board[1][g+1] = r7.get(g).toString();
+	    board[d+1][4] = r4.get(d).toString();
+	for ( int e=0; e<r3.getSize(); e++ ) 
+	    board[e+1][5] = r3.get(e).toString();
+	for ( int f=0; f<r2.getSize(); f++ ) 
+	    board[f+1][6] = r2.get(f).toString();
+	for ( int g=0; g<r1.getSize(); g++ ) 
+	    board[g+1][7] = r1.get(g).toString();
     }
 
     public static void main(String[] args) {
