@@ -1,5 +1,7 @@
 // This will be the main class from which the game is run
 
+import java.util.*;
+
 public class SolitaireRunner {
 
     private DrawPile deck;
@@ -127,8 +129,8 @@ public class SolitaireRunner {
 	SolitaireRunner s = new SolitaireRunner();
 	// s.update();
 
-	while ( !checkComplete() ) {
-	    turn();
+	while ( !s.checkComplete() ) {
+	    s.turn();
 	}
     }//end main 
 }//end class SolitaireRunner 
