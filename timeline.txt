@@ -12,12 +12,11 @@ Timeline/ To Do List:
 - test the classes 
 	- with test cases, make sure it works
 	- NEED TO FIX RANKS FOR LINKED LIST  
-- start the initial set up 
-	maybe have as a 2D array where the user can indicate the row and column where they want to move it, 
-add a method that if an ace is picked it will automatically go to the 4 suits
+- start the initial set up, maybe have as a 2D array where the user can indicate the row and column where they want to move it ~~
+- add a method that if an ace is picked it will automatically go to the 4 suits
 
--> user interaction
-	- be able to see a grid type structure
+-> user interaction ***
+	- be able to see a grid type structure ~~
 	- enter the row, column of the card and the card/cards they want to move and then select the location that they want to move it to
 	- if these moves are not valid they should get a message saying “invalid”
 	- maybe begin the game with some rules?
@@ -26,12 +25,11 @@ add a method that if an ace is picked it will automatically go to the 4 suits
 
 
 - SolitaireRunner
-	- update() (display like a 2D array) 
-	- deal() (to add cards to the NumSorted Piles)
+	- update() (display like a 2D array) ~~
+	- deal() (to add cards to the NumSorted Piles) ~~
 	- turn() 
-		- method to check for unflipped cards on the top of 
-NumSorted
-	- need to link the board to the actual piles
+		- method to check for unflipped cards on the top of NumSorted
+	- need to link the board to the actual piles ~~
 
 - finish the project
 
@@ -39,6 +37,6 @@ Add ons once finished
 - how hard to make a timer
 - processing
 - hints 
--point value
+- point value
 - lose or win (no more moves)
 
