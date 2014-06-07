@@ -116,7 +116,7 @@ public class SolitaireRunner {
 	     diamond.peek().equals("DK") )
 	    return true;
 	return false;
-    }
+    }// wait wouldnt we be peeking at the 2?
 
     public void turn() {
 	update();
