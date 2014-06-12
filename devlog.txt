@@ -56,4 +56,4 @@
 2014-06-12
 -> During lab we:
 	- continued the user input parts, by adding an options for the player to choose from (move, deal)
-	
+	- realized we needed separate methods for player adding and dealing adding in NumSort, so we created new methods
