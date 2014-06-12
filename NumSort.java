@@ -45,7 +45,7 @@ public class NumSort implements Pile{
 	 * OR if the last card is flipped, and this card is flipped, it can be added. This condition is not for the user but for the coder. 
 	 * When Deck deals out the cards at random in the beginning of the game, add() must account for it 
 	 */
-	public void add( Card c ) {
+	public void addDeal( Card c ) {
 	    if ( isEmpty() || !(peek().isFaceUp()) ) {
 			_rank.add( c );
 		}
