@@ -12,6 +12,8 @@ public class SuitSort implements Pile {
     }
 
     public Card peek() {
+	if ( _pile.size() == 0 )
+	    return null;
 	return _pile.peek();
     }
 

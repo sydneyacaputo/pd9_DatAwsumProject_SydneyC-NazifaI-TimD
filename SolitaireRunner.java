@@ -110,6 +110,11 @@ public class SolitaireRunner {
     }
 
     public boolean checkComplete() {
+	if ( spade.peek() == null ||
+	     heart.peek() == null ||
+	     club.peek() == null ||
+	     diamond.peek() == null )
+	    return false;
 	if ( spade.peek().equals("SK") &&
 	     heart.peek().equals("HK") &&
 	     club.peek().equals("CK") &&
@@ -120,7 +125,14 @@ public class SolitaireRunner {
 
     public void turn() {
 	update();
-	System.out.print("Choose a card (row,col): ");
+	System.out.print("What do you want to do? Move a card (m) or deal (d)? ");
+	if ( s.nextLine().equals("m") ) {
+	    System.out.println("Choose a card to move:");
+	    System.out.print("What row? (--) ");
+	    int r = s.nextInt();
+	    System.out.print("What column? (-) ");
+	    int c = s.nextInt();
+	}
     }
 
     public static void main(String[] args) {
