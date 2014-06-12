@@ -74,7 +74,7 @@ public class DrawPile implements Pile {
         NumSort[] field = { r1, r2, r3, r4, r5, r6, r7 };
 	for ( int i=0; i<7; i++ ) {
 	    for ( int j=i; j<7; j++ ) {
-		field[j].add(remove());
+		field[j].addDeal(remove());
 		if ( j == i )
 		    field[j].peek().flip();
 	    }
