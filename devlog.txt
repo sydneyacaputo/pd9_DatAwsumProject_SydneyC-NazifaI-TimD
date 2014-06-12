@@ -52,3 +52,8 @@
    	- got rid of the "nulls" being shown by the board when there were no cards there
 	- created a checkComplete() method to see if the game is over
 	- started the turn() method
+
+2014-06-12
+-> During lab we:
+	- continued the user input parts, by adding an options for the player to choose from (move, deal)
+	
