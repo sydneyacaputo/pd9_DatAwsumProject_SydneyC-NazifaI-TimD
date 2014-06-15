@@ -144,8 +144,6 @@ public class SolitaireRunner {
 	    System.out.println("Invalid spot!");
 	    move();
 	}
-
-
 	System.out.println("Choose a place to move " + board[r1][c1] + " to:");
 	int r2 = rowInput();	
 	int c2 = colInput();
