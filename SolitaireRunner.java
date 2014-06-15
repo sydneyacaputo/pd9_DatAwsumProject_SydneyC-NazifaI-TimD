@@ -140,10 +140,19 @@ public class SolitaireRunner {
 	System.out.println("Choose a card to move:");
 	int r1 = rowInput();	
 	int c1 = colInput();
+	if ( !checkValidMove( r1, c1 ) ) {
+	    System.out.println("Invalid spot!");
+	    move();
+	}
+
 
 	System.out.println("Choose a place to move " + board[r1][c1] + " to:");
 	int r2 = rowInput();	
 	int c2 = colInput();
+	if ( !checkValidSpot( r1, c1, r2, c2 ) ) {
+	    System.out.println("Invalid spot!");
+	    move();
+	}
 
     }
 
@@ -157,14 +166,6 @@ public class SolitaireRunner {
 	    System.out.println("Invalid response!");
 	    return rowInput();
 	}
-
-	for ( int i=0; i<board[row].length; i++ ) {
-	    if ( board[row][i] == null || board[row][i].equals(" # ") ) {
-		System.out.println("Invalid response!");
-		return rowInput();
-	    }
-	}     
- 
 	return row;
     }
 
@@ -178,15 +179,22 @@ public class SolitaireRunner {
 	    System.out.println("Invalid response!");
 	    return colInput();
 	}
-
-	for ( int i=0; i<board.length; i++ ) {
-	    if ( board[i][col] == null || board[i][col].equals(" # ") ) {
-		System.out.println("Invalid response!");
-		return colInput();
-	    }
-	}
-
 	return col;
+    }
+
+    public boolean isValidMove( int row, int col ) {
+	/* This needs to check:
+	   1. If the spot is not a facedown card (board[row][col] =/= " # ")
+	   2. If the spot is an actual card (board[row][col] =/= "   ")
+	*/
+    }
+    
+    public boolean isValidSpot( int rowInit, int colInit, int rowFinal, int colFinal ) {
+	/* This needs to check:
+	   1. If the spot is not a facedown card (board[row][col] =/= " # ")
+	   2. If the spot is an actual card (board[row][col] =/= "   ")
+	   3. If the spot is an appropriate place to add the cards
+	*/
     }
     public void deal() {
 	System.out.println("The next card dealt is: " + deck.peek());
