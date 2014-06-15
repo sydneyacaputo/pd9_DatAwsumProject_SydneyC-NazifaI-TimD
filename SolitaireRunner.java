@@ -126,18 +126,81 @@ public class SolitaireRunner {
 
     public void turn() {
 	System.out.print("What do you want to do? Move a card (m) or deal (d)? ");
-	if ( sc.nextLine().equals("m") ) {
-	    System.out.println("Choose a card to move:");
-	    System.out.print("What row? (--) ");
-	    int r = sc.nextInt();
-	    System.out.print("What column? (-) ");
-	    int c = sc.nextInt();
-	} else if ( sc.nextLine().equals("d") ) {
-	    System.out.print("The next card dealt is: " + deck.peek());
-	    leftovers.add(deck.remove());
+	if ( sc.nextLine().equals("m") )
+	    move();
+	else if ( sc.nextLine().equals("d") )
+	    deal();
+	else {
+	    System.out.println("Invalid response!");
+	    turn();
 	}
     }
 
+    public void move() {
+	System.out.println("Choose a card to move:");
+	int r1 = rowInput();	
+	int c1 = colInput();
+
+	System.out.println("Choose a place to move " + board[r1][c1] + " to:");
+	int r2 = rowInput();	
+	int c2 = colInput();
+
+    }
+
+    public int rowInput() {
+	System.out.print("What row? (--) ");
+	int row = -1;
+        try {
+	    row = sc.nextInt();
+	} catch ( InputMismatchException e ) {
+	    System.out.print("\n");
+	    System.out.println("Invalid response!");
+	    return rowInput();
+	}
+
+	for ( int i=0; i<board[row].length; i++ ) {
+	    if ( board[row][i] == null || board[row][i].equals(" # ") ) {
+		System.out.println("Invalid response!");
+		return rowInput();
+	    }
+	}     
+ 
+	return row;
+    }
+
+    public int colInput() {
+	System.out.print("What column? (-) ");
+	int col = -1;
+        try {
+	    col = sc.nextInt();
+	} catch ( InputMismatchException e ) {
+	    System.out.print("\n");
+	    System.out.println("Invalid response!");
+	    return colInput();
+	}
+
+	for ( int i=0; i<board.length; i++ ) {
+	    if ( board[i][col] == null || board[i][col].equals(" # ") ) {
+		System.out.println("Invalid response!");
+		return colInput();
+	    }
+	}
+
+	return col;
+    }
+    public void deal() {
+	System.out.println("The next card dealt is: " + deck.peek());
+	System.out.print("Do you want to move this card? (y/n): ");
+	if ( sc.nextLine().equals("y") ) {
+	    move();
+	} else if ( sc.nextLine().equals("n") ) {
+	    return;
+	} else {
+	    System.out.println("Invalid response!");
+	    deal();
+	}
+    }
+    
     public static void main(String[] args) {
 	System.out.println("HELLO, THE GAME IS BEGINNING.");
 
