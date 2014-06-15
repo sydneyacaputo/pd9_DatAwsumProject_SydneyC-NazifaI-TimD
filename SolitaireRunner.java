@@ -122,7 +122,7 @@ public class SolitaireRunner {
 	     diamond.peek().equals("DK") )
 	    return true;
 	return false;
-    }// wait wouldnt we be peeking at the 2?
+    }
 
     public void turn() {
 	System.out.print("What do you want to do? Move a card (m) or deal (d)? ");
@@ -143,7 +143,16 @@ public class SolitaireRunner {
 
 	SolitaireRunner s = new SolitaireRunner();
         s.update();
+	/*
+	  What we need for the game:
+	  - ask if they want to draw a card first
+	      - if yes, then we ask if they want to move it and then where
+	      - if they dont want to use that card just give the option to pick a regular card
+	  - if no then we have to ask if they want to move it
+	  - for the suitsort piles they just have to indicate the suit of the pile 
+	  - for the numsort piles they have to indicate the row,column that they want
 
+	 */
 	/*	while ( !s.checkComplete() ) {
 	    s.update();
 	    s.turn();
