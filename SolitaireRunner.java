@@ -4,15 +4,16 @@ import java.util.*;
 
 public class SolitaireRunner {
 
-    private DrawPile deck;
+    private DrawPile deck,leftovers;
     private SuitSort spade, heart, club, diamond;
     private NumSort r1, r2, r3, r4, r5, r6, r7;
     private String[][] board;
 
-    Scanner s = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     public SolitaireRunner() {
 	deck = new DrawPile();
+	leftovers = new DrawPile();
 
 	spade = new SuitSort("Spade");
 	heart = new SuitSort("Heart");
@@ -124,14 +125,16 @@ public class SolitaireRunner {
     }// wait wouldnt we be peeking at the 2?
 
     public void turn() {
-	update();
 	System.out.print("What do you want to do? Move a card (m) or deal (d)? ");
-	if ( s.nextLine().equals("m") ) {
+	if ( sc.nextLine().equals("m") ) {
 	    System.out.println("Choose a card to move:");
 	    System.out.print("What row? (--) ");
-	    int r = s.nextInt();
+	    int r = sc.nextInt();
 	    System.out.print("What column? (-) ");
-	    int c = s.nextInt();
+	    int c = sc.nextInt();
+	} else if ( sc.nextLine().equals("d") ) {
+	    System.out.print("The next card dealt is: " + deck.peek());
+	    leftovers.add(deck.remove());
 	}
     }
 
@@ -139,10 +142,12 @@ public class SolitaireRunner {
 	System.out.println("HELLO, THE GAME IS BEGINNING.");
 
 	SolitaireRunner s = new SolitaireRunner();
-	// s.update();
+        s.update();
 
-	while ( !s.checkComplete() ) {
+	/*	while ( !s.checkComplete() ) {
+	    s.update();
 	    s.turn();
-	}
+	    } */
+
     }//end main 
 }//end class SolitaireRunner 
