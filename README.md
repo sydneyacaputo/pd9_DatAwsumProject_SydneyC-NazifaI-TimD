@@ -6,7 +6,7 @@ How to Run:
   
   GAME PLAY IS DONE IN THE TERMINAL 
 How to Play: 
--Use any exposed aces to start a pile on which you will build up the remaining cards in that suit.
+- Use any exposed aces to start a pile on which you will build up the remaining cards in that suit.
 - Move any remaining cards around as you build rows of cards that are in descending order and alternating color (e.g., 10 of clubs, 9 of diamonds, 8 of spades, 7 of hearts, etc.).
 - After clearing all face-up cards from a row, flip over the top face-down card.
 - Continue to build the suit piles, beginning with the aces, and to rearrange the rows of descending cards, in order to free up all the cards that are face down in piles.
