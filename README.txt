@@ -16,10 +16,10 @@ To win:
 
 Taken from: http://www.wikihow.com/Sample/Solitaire-Rules
 SUITS:
-D = DIAMONDS
-S = SPADE
-C = CLUBS
-H = HEART
+D = DIAMONDS (RED CARD)
+S = SPADE  (BLACK CARD)
+C = CLUBS (BLACK CARD)
+H = HEART (RED CARD)
 
 FACE CARDS:
 J = JACK
