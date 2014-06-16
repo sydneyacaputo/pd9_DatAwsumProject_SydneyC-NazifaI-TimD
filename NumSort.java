@@ -60,14 +60,14 @@ public class NumSort implements Pile{
 	public void addPile (int x, NumSort oldRank) {
 		LinkedList<Card> tempList = new LinkedList<Card>();
 		Card target = oldRank.get(x);
-		int i = oldRank.size();
+		int i = oldRank.size() - 1;
 		while (oldRank.get(i) != target) {
 			tempList.add(oldRank.remove(oldRank.get(i)));
 			i--;
 		}
 		tempList.add(target);
 		oldRank.remove(target);
-		for (i = _rank.size(); i >= 0; i++) {
+		for (i = _rank.size() - 1; i >= 0; i--) {
 			_rank.add(tempList.remove(i));
 		}
 		
@@ -107,8 +107,9 @@ public class NumSort implements Pile{
 		return retStr; 
 	}
 	
-	public static void main ( String[] args ) {
-		 NumSort rank = new NumSort();
+/*	public static void main ( String[] args ) {
+		 NumSort rank1 = new NumSort();
+		 NumSort rank2 = new NumSort();
 //		 System.out.println("Testing toString... ");
 //		 System.out.println(rank); 
 		 Card t1 = new Card(5,"Spade" );
@@ -116,16 +117,24 @@ public class NumSort implements Pile{
 		 Card t3 = new Card(3,"Club" );
 		 Card t4 = new Card(1,"Diamond" );
 //		 System.out.println("Testing add...");
-		 rank.add( t1 );
+		 rank1.add( t1 );
 //		 System.out.println("Added first card");
 //		 System.out.println(rank);
-		 rank.add( t2 );
+		 rank1.add( t2 );
+		 System.out.print("Displaying rank1: ");
+		 System.out.println(rank1);
 //		 System.out.println("Added second card");
 //		 System.out.println(rank);
-		 rank.add( t3 );
+		 rank2.add( t3 );
 //		 System.out.println("Added third card");
 //		 System.out.println(rank);
-		 rank.add( t4 );
+		 rank2.add( t4 );
+		 System.out.print("Displaying rank2: ");
+		 System.out.println(rank2);
+		 System.out.println("Testing addPile...");
+		 rank1.addPile(0, rank2 );
+		 System.out.print("Displaying rank1: ");
+		 System.out.println(rank1);
 //		 System.out.println("Added error card");
 //		 System.out.println(rank);
 //		 System.out.println("Testing remove...");
@@ -137,9 +146,9 @@ public class NumSort implements Pile{
 //		 System.out.println(rank);
 //		 System.out.println("Removed a card");
 //-		 rank.remove();
-		 System.out.println(rank);
+		 //System.out.println(rank);
 		 
 		
 	}//end main 
-	
+	*/
 }//end class
