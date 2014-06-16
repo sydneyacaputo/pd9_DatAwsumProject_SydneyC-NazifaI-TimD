@@ -6,7 +6,6 @@ NumSort is for the 7 piles of cards that the player will sort. The cards will be
 
 import java.util.*;
 
-import javax.smartcardio.Card;
 
 
 public class NumSort implements Pile{
