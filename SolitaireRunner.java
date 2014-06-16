@@ -22,7 +22,7 @@ public class SolitaireRunner {
 
 	numArray = new NumSort[7];
 	for ( int x=0; x<7; x++ )
-	    numArray[x] = new Numsort();
+	    numArray[x] = new NumSort();
 
 	deck.deal( numArray );
 
@@ -102,14 +102,14 @@ public class SolitaireRunner {
 	System.out.println("Choose a card to move:");
 	int r1 = rowInput();	
 	int c1 = colInput();
-	if ( !checkValidMove( r1, c1 ) ) {
+	if ( !isValidMove( r1, c1 ) ) {
 	    System.out.println("Invalid spot!");
 	    move();
 	}
 	System.out.println("Choose a place to move " + board[r1][c1] + " to:");
 	int r2 = rowInput();	
 	int c2 = colInput();
-	if ( !checkValidSpot( r1, c1, r2, c2 ) ) {
+	if ( !isValidSpot( r1, c1, r2, c2 ) ) {
 	    System.out.println("Invalid spot!");
 	    move();
 	}
@@ -147,6 +147,7 @@ public class SolitaireRunner {
 	   1. If the spot is not a facedown card (board[row][col] =/= " # ")
 	   2. If the spot is an actual card (board[row][col] =/= "   ")
 	*/
+	return true;
     }
     
     public boolean isValidSpot( int rowInit, int colInit, int rowFinal, int colFinal ) {
@@ -155,6 +156,7 @@ public class SolitaireRunner {
 	   2. If the spot is an actual card (board[row][col] =/= "   ")
 	   3. If the spot is an appropriate place to add the cards
 	*/
+	return true;
     }
     public void deal() {
 	System.out.println("The next card dealt is: " + deck.peek());

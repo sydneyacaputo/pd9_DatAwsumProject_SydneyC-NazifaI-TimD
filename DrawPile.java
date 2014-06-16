@@ -70,7 +70,7 @@ public class DrawPile implements Pile {
 	return ret;
     }
 
-    public void deal( NumSort[] nums ) 
+    public void deal( NumSort[] nums ) {
 	for ( int i=0; i<7; i++ ) {
 	    for ( int j=i; j<7; j++ ) {
 		nums[j].addDeal(remove());
