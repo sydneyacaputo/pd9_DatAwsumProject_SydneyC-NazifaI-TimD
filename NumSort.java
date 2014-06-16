@@ -55,6 +55,19 @@ public class NumSort implements Pile{
 		else _rank.add( c ); 	
 	}
 	
+	public void addDeal( Card c ) {
+	    if ( isEmpty() || !(peek().isFaceUp()) ) {
+			_rank.add( c );
+		}
+		else if ( checkColor( peek() ).equals( checkColor( c ) ) //if this card and the last card are not alternating
+		 || peek().getValue() - c.getValue() != 1 )//or if the cards aren't back to back 
+	    	return;
+		else {
+			_rank.add( c );
+		}
+	}
+	
+	
 	public Card remove() {
 		if ( isEmpty() ) return null;
 		//if flipped????
