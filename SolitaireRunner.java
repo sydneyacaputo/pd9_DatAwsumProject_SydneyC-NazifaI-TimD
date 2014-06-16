@@ -8,8 +8,13 @@ public class SolitaireRunner {
     private SuitSort spade, heart, club, diamond;
     private NumSort r1, r2, r3, r4, r5, r6, r7;
     private String[][] board;
+    private NumSort[] numArray;
 
     Scanner sc = new Scanner(System.in);
+    
+    numArray = new NumSort[7];
+    for(int x=0; x<6; x++)
+	numArray[x]= "r"+ (x+1);
 
     public SolitaireRunner() {
 	deck = new DrawPile();
