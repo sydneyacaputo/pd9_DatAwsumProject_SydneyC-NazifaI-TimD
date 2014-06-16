@@ -195,7 +195,7 @@ public class SolitaireRunner {
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
 	    int c2 = colInput();
 	    if ( twoParam )
-		numArray[c2].addPile( row, numArray[c1] );
+		numArray[c2].addPile( r1, numArray[c1] );
 	    else {
 		int size = numArray[c2].getSize();
 		numArray[c2].addPile( card );
