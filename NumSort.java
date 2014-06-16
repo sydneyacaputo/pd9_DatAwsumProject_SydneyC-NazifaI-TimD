@@ -59,7 +59,7 @@ public class NumSort implements Pile{
 		}
 	}
 	
-	public void addPile(int x, NumSort newRank) {
+	public void addPile (int x, NumSort newRank) {
 		LinkedList<Card> tempList = new LinkedList<Card>();
 		Card target = _rank.get(x);
 		int i = _rank.size();
@@ -75,14 +75,14 @@ public class NumSort implements Pile{
 		
 	}
 	
-/*	public Card remove() {
+	public Card remove() {
 		if ( isEmpty() ) return null;
 		//if flipped????
 		return _rank.removeLast(); 
 		
 	
 	}
-	*/
+	
 	public String toString() {
 		if (isEmpty()) return "NULL"; 
 		String retStr = "TOP-> | "; 
