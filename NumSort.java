@@ -55,16 +55,20 @@ public class NumSort implements Pile{
 		else _rank.add( c ); 	
 	}
 	
-	public void addDeal( Card c ) {
-	    if ( isEmpty() || !(peek().isFaceUp()) ) {
-			_rank.add( c );
+public void addPile (int x, NumSort newRank) {
+		LinkedList<Card> tempList = new LinkedList<Card>();
+		Card target = _rank.get(x);
+		int i = _rank.size();
+		while (_rank.get(i) != target) {
+			tempList.add(_rank.remove(_rank.get(i)));
+			i--;
 		}
-		else if ( checkColor( peek() ).equals( checkColor( c ) ) //if this card and the last card are not alternating
-		 || peek().getValue() - c.getValue() != 1 )//or if the cards aren't back to back 
-	    	return;
-		else {
-			_rank.add( c );
+		tempList.add(target);
+		_rank.remove(target);
+		for (i = _rank.size(); i >= 0; i++) {
+			newRank.add(tempList.remove(i));
 		}
+		
 	}
 	
 	
