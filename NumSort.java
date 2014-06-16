@@ -7,7 +7,6 @@ NumSort is for the 7 piles of cards that the player will sort. The cards will be
 import java.util.*;
 
 
-
 public class NumSort implements Pile{
 
     private LinkedList<Card> _rank; 
@@ -74,7 +73,7 @@ public class NumSort implements Pile{
 		
 	}
 	
-	public void addPile (card c) {
+	public void addPile (Card c) {
 		this.add(c);
 	}
 	
@@ -84,6 +83,15 @@ public class NumSort implements Pile{
 		return _rank.removeLast(); 
 		
 	
+	}
+	
+	public Card remove(Card c) {
+		_rank.remove(c);
+		return c;
+	}
+	
+	public int size() {
+		return _rank.size();
 	}
 	
 	public String toString() {
