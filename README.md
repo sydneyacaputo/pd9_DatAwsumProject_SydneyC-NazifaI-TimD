@@ -24,17 +24,17 @@ Taken from: http://www.wikihow.com/Sample/Solitaire-Rules
 
 SUITS:
 
-D = Diamonds (Red)
-S = Spades (Black)
-C = Clubs (Black)
+D = Diamonds (Red),
+S = Spades (Black),
+C = Clubs (Black),
 H = Hearts (Red)
 
 
 FACE CARDS:
 
-J = Jack
-Q = Queen
-K = King
+J = Jack,
+Q = Queen,
+K = King,
 A = Ace
 
 
