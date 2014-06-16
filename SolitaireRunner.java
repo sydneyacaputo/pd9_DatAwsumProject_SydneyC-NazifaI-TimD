@@ -127,7 +127,7 @@ public class SolitaireRunner {
 	    } else if ( sc.nextLine().equals("m") ) {
 		System.out.println("Choose where you want to place " + card.toString() + ":");
 		int c2 = colInput();	
-		numArray[c2].addPile( card );		    
+		numArray[c2].add( card );		    
 	    } else {
 		System.out.println("Invalid response!");
 		move();
@@ -191,7 +191,7 @@ public class SolitaireRunner {
 	} else if ( sc.nextLine().equals("m") ) {
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
 	    int c2 = colInput();	
-	    numArray[c2].addPile( card );		    
+	    numArray[c2].add( card );		    
 	} else {
 	    System.out.println("Invalid response!");
 	    move();
