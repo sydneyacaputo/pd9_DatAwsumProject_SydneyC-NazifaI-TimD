@@ -57,3 +57,8 @@
 -> During lab we:
 	- continued the user input parts, by adding an options for the player to choose from (move, deal)
 	- realized we needed separate methods for player adding and dealing adding in NumSort, so we created new methods
+
+2014-06-15
+- added more user input
+- array of numsorts, edited the code to reflect that
+- separate helper methods to make the turn methods easier to navigate
