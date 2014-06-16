@@ -75,6 +75,10 @@ public class NumSort implements Pile{
 		
 	}
 	
+	public void addPile (card c) {
+		this.add(c);
+	}
+	
 	public Card remove() {
 		if ( isEmpty() ) return null;
 		//if flipped????
