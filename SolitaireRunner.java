@@ -97,23 +97,105 @@ public class SolitaireRunner {
 	    turn();
 	}
     }
+  
+    public void deal() {
+	if ( deck.isEmpty() ) {
+	    deck = leftovers;
+	    leftovers = new DrawPile();
+	}
+	    
+	System.out.println("The next card dealt is: " + deck.peek());
+	System.out.print("Do you want to move this card? (y/n): ");
+	if ( sc.nextLine().equals("y") ) {
+	    Card card = deck.remove();
+
+	    System.out.println("Move to a suit pile (s) or a mixed pile (m)? ");
+	    if ( sc.nextLine().equals("s") ) {
+		System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
+		if ( sc.nextLine().equals("s") )
+		    spade.add(card);
+		else if ( sc.nextLine().equals("h") )
+		    heart.add(card);
+		else if ( sc.nextLine().equals("c") )
+		    club.add(card);
+		else if ( sc.nextLine().equals("d") )
+		    diamond.add(card);
+		else {
+		    System.out.println("Invalid response!");
+		    move();
+		}
+	    } else if ( sc.nextLine().equals("m") ) {
+		System.out.println("Choose where you want to place " + card.toString() + ":");
+		int c2 = colInput();	
+		numArray[c2].add( card );		    
+	    } else {
+		System.out.println("Invalid response!");
+		move();
+	    }
+	} else if ( sc.nextLine().equals("n") ) {
+	    leftovers.add(deck.remove());
+	} else {
+	    System.out.println("Invalid response!");
+	    deal();
+	}
+	
+    }
 
     public void move() {
-	System.out.println("Choose a card to move:");
-	int r1 = rowInput();	
-	int c1 = colInput();
-	if ( !isValidMove( r1, c1 ) ) {
-	    System.out.println("Invalid spot!");
-	    move();
-	}
-	System.out.println("Choose a place to move " + board[r1][c1] + " to:");
-	int r2 = rowInput();	
-	int c2 = colInput();
-	if ( !isValidSpot( r1, c1, r2, c2 ) ) {
-	    System.out.println("Invalid spot!");
-	    move();
-	}
+	System.out.print("Move from the field (f) or the suit piles (s)? ");
+	Card card;
+	if ( sc.nextLine().equals("f") ) {
+	    System.out.println("Choose a card to move:");
+	    int r1 = rowInput();	
+	    int c1 = colInput();
+	    card = numArray[c1].get(r1);
 
+	    if ( !isValidMove( r1, c1 ) ) {
+		System.out.println("Invalid spot!");
+		move();
+	    }
+	} else if ( sc.nextLine().equals("s") ) {
+	    System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
+	    if ( sc.nextLine().equals("s") )
+		card = spade.peek();
+	    else if ( sc.nextLine().equals("h") )
+		card = heart.peek();
+	    else if ( sc.nextLine().equals("c") )
+		card = club.peek();
+	    else if ( sc.nextLine().equals("d") )
+		card = diamond.peek();
+	    else {
+		System.out.println("Invalid response!");
+		move();
+	    }
+	} else {
+	    System.out.println("Invalid response!");
+	    move();
+	}
+	
+	System.out.println("Move to a suit pile (s) or a mixed pile (m)? ");
+	if ( sc.nextLine().equals("s") ) {
+	    System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
+	    if ( sc.nextLine().equals("s") )
+	        spade.add(card);
+	    else if ( sc.nextLine().equals("h") )
+		heart.add(card);
+	    else if ( sc.nextLine().equals("c") )
+	        club.add(card);
+	    else if ( sc.nextLine().equals("d") )
+		diamond.add(card);
+	    else {
+		System.out.println("Invalid response!");
+		move();
+	    }
+	} else if ( sc.nextLine().equals("m") ) {
+	    System.out.println("Choose where you want to place " + card.toString() + ":");
+	    int c2 = colInput();	
+	    numArray[c2].add( card );		    
+	} else {
+	    System.out.println("Invalid response!");
+	    move();
+	}
     }
 
     public int rowInput() {
@@ -143,62 +225,28 @@ public class SolitaireRunner {
     }
 
     public boolean isValidMove( int row, int col ) {
-	/* This needs to check:
-	   1. If the spot is not a facedown card (board[row][col] =/= " # ")
-	   2. If the spot is an actual card (board[row][col] =/= "   ")
-	*/
+	if ( row > numArray[col].getSize() )
+	    return false;
+	Card card = numArray[col].get(row);
+	if ( card.isFaceUp() == false )
+	    return false;
 	return true;
     }
-    
-    public boolean isValidSpot( int rowInit, int colInit, int rowFinal, int colFinal ) {
-	/* This needs to check:
-	   1. If the spot is not a facedown card (board[row][col] =/= " # ")
-	   2. If the spot is an actual card (board[row][col] =/= "   ")
-	   3. If the spot is an appropriate place to add the cards
-	*/
-	return true;
-    }
-    public void deal() {
-	System.out.println("The next card dealt is: " + deck.peek());
-	System.out.print("Do you want to move this card? (y/n): ");
-	if ( sc.nextLine().equals("y") ) {
-	    move();
-	} else if ( sc.nextLine().equals("n") ) {
-	    return;
-	} else {
-	    System.out.println("Invalid response!");
-	    deal();
-	}
-    }
+
     
     public static void main(String[] args) {
 	System.out.println("HELLO, THE GAME IS BEGINNING.");
 
 	SolitaireRunner s = new SolitaireRunner();
-        s.update();
-	/*
-	  What we need for the game:
-	  - ask if they want to draw a card first
-	      - if yes, then we ask if they want to move it and then where
-	      - if they dont want to use that card just give the option to pick a regular card
-	  - if no then we have to ask if they want to move it
-	  - for the suitsort piles they just have to indicate the suit of the pile 
-	  - for the numsort piles they have to indicate the row,column that they want
+        
 
-	 */
-	/*	while ( !s.checkComplete() ) {
+        while ( !s.checkComplete() ) {
 	    s.update();
 	    s.turn();
-	    } */
+	}
 
 	System.out.println("YOU HAVE WON!");
-	System.out.println("   ____     ____        __      _      _____    ______       ____     ________    _____  _______
-  / ___)   / __ \      /  \    / )    / ___ \  (   __ \     (    )   (___  ___)  / ____\ \     /
- / /      / /  \ \    / /\ \  / /    / /   \_)  ) (__) )    / /\ \       ) )    ( (___    \   / 
-( (      ( ()  () )   ) ) ) ) ) )   ( (  ____  (    __/    ( (__) )     ( (      \___ \    ) (  
-( (      ( ()  () )  ( ( ( ( ( (    ( ( (__  )  ) \ \  _    )    (       ) )         ) )   \_/  
- \ \___   \ \__/ /   / /  \ \/ /     \ \__/ /  ( ( \ \_))  /  /\  \     ( (      ___/ /     _   
-  \____)   \____/   (_/    \__/       \____/    )_) \__/  /__(  )__\    /__\    /____/     (_) ";
+
 	   
 
 
