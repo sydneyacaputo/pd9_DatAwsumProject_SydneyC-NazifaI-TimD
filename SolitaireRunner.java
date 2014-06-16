@@ -61,12 +61,12 @@ public class SolitaireRunner {
     } // needs to be tweaked
 
     public void merge() {
-	for ( int n=numArray.length; n>0; n++ ) {
+	for ( int n=numArray.length-1; n>=0; n-- ) {
 	    for ( int i=0; i<19; i++ ) {
 		if ( i >= numArray[n].getSize() )
-		    board[i+1][8-n] = "  ";
+		    board[i+1][7-n] = "  ";
 		else
-		    board[i+1][8-n] = numArray[n].get(i).toString();
+		    board[i+1][7-n] = numArray[n].get(i).toString();
 	    }
 	}
     }
@@ -87,9 +87,10 @@ public class SolitaireRunner {
 
     public void turn() {
 	System.out.print("What do you want to do? Move a card (m) or deal (d)? ");
-	if ( sc.nextLine().equals("m") )
+	String str = "" + sc.next();
+	if ( str.equals("m") )
 	    move();
-	else if ( sc.nextLine().equals("d") )
+	else if ( str.equals("d") )
 	    deal();
 	else {
 	    System.out.println("Invalid response!");
@@ -105,25 +106,27 @@ public class SolitaireRunner {
 	    
 	System.out.println("The next card dealt is: " + deck.peek());
 	System.out.print("Do you want to move this card? (y/n): ");
-	if ( sc.nextLine().equals("y") ) {
+	String str1 = "" + sc.next();	
+	if ( str1.equals("y") ) {
 	    Card card = deck.remove();
-
-	    System.out.println("Move to a suit pile (s) or a mixed pile (m)? ");
-	    if ( sc.nextLine().equals("s") ) {
-		System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
-		if ( sc.nextLine().equals("s") )
+	    System.out.print("Move to a suit pile (s) or a mixed pile (m)? ");
+	    String str2 = "" + sc.next();
+	    if ( str2.equals("s") ) {
+		System.out.print("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
+		String str3 = "" + sc.next();
+		if ( str3.equals("s") )
 		    spade.add(card);
-		else if ( sc.nextLine().equals("h") )
+		else if ( str3.equals("h") )
 		    heart.add(card);
-		else if ( sc.nextLine().equals("c") )
+		else if ( str3.equals("c") )
 		    club.add(card);
-		else if ( sc.nextLine().equals("d") )
+		else if ( str3.equals("d") )
 		    diamond.add(card);
 		else {
 		    System.out.println("Invalid response!");
 		    move();
 		}
-	    } else if ( sc.nextLine().equals("m") ) {
+	    } else if ( str2.equals("m") ) {
 		System.out.println("Choose where you want to place " + card.toString() + ":");
 		int c2 = colInput();	
 		numArray[c2].addPile( card );		    
@@ -131,7 +134,7 @@ public class SolitaireRunner {
 		System.out.println("Invalid response!");
 		move();
 	    }
-	} else if ( sc.nextLine().equals("n") ) {
+	} else if ( str1.equals("n") ) {
 	    leftovers.add(deck.remove());
 	} else {
 	    System.out.println("Invalid response!");
@@ -142,29 +145,31 @@ public class SolitaireRunner {
 
     public void move() {
 	System.out.print("Move from the field (f) or the suit piles (s)? ");
-	Card card;
-	int c1;
-	int r1;
+	String str1 = "" + sc.next();
+	Card card = new Card(1,"S");
+	int c1 = 0;
+	int r1 = 0;
 	boolean twoParam = true;
-	if ( sc.nextLine().equals("f") ) {
+	if ( str1.equals("f") ) {
 	    System.out.println("Choose a card to move:");
 	    r1 = rowInput();	
 	    c1 = colInput();
 	    card = numArray[c1].get(r1);
-
 	    if ( !isValidMove( r1, c1 ) ) {
 		System.out.println("Invalid spot!");
 		move();
 	    }
-	} else if ( sc.nextLine().equals("s") ) {
+	} else if ( str1.equals("s") ) {
 	    System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
-	    if ( sc.nextLine().equals("s") )
+	    String str2 = "" + sc.next();
+		
+	    if ( str2.equals("s") )
 		card = spade.remove();
-	    else if ( sc.nextLine().equals("h") )
+	    else if ( str2.equals("h") )
 		card = heart.remove();
-	    else if ( sc.nextLine().equals("c") )
+	    else if ( str2.equals("c") )
 		card = club.remove();
-	    else if ( sc.nextLine().equals("d") )
+	    else if ( str2.equals("d") )
 		card = diamond.remove();
 	    else {
 		System.out.println("Invalid response!");
@@ -177,21 +182,23 @@ public class SolitaireRunner {
 	}
 	
 	System.out.println("Move to a suit pile (s) or a mixed pile (m)? ");
-	if ( sc.nextLine().equals("s") ) {
+	String str3 = "" + sc.next();
+	if ( str3.equals("s") ) {
 	    System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
-	    if ( sc.nextLine().equals("s") )
+	    String str4 = "" + sc.next();
+	    if ( str4.equals("s") )
 	        spade.add(card);
-	    else if ( sc.nextLine().equals("h") )
+	    else if ( str4.equals("h") )
 		heart.add(card);
-	    else if ( sc.nextLine().equals("c") )
+	    else if ( str4.equals("c") )
 	        club.add(card);
-	    else if ( sc.nextLine().equals("d") )
+	    else if ( str4.equals("d") )
 		diamond.add(card);
 	    else {
 		System.out.println("Invalid response!");
 		move();
 	    }
-	} else if ( sc.nextLine().equals("m") ) {
+	} else if ( str3.equals("m") ) {
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
 	    int c2 = colInput();
 	    if ( twoParam )
