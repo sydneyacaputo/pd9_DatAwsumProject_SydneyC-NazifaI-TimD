@@ -6,6 +6,8 @@ NumSort is for the 7 piles of cards that the player will sort. The cards will be
 
 import java.util.*;
 
+import javax.smartcardio.Card;
+
 
 public class NumSort implements Pile{
 
@@ -52,10 +54,12 @@ public class NumSort implements Pile{
 		else if ( checkColor( peek() ).equals( checkColor( c ) ) //if this card and the last card are not alternating
 		 || peek().getValue() - c.getValue() != 1 )//or if the cards aren't back to back 
 	    	return;
-		else _rank.add( c ); 	
+		else {
+			_rank.add( c );
+		}
 	}
 	
-public void addPile (int x, NumSort newRank) {
+	public void add(int x, NumSort newRank) {
 		LinkedList<Card> tempList = new LinkedList<Card>();
 		Card target = _rank.get(x);
 		int i = _rank.size();
@@ -71,15 +75,14 @@ public void addPile (int x, NumSort newRank) {
 		
 	}
 	
-	
-	public Card remove() {
+/*	public Card remove() {
 		if ( isEmpty() ) return null;
 		//if flipped????
 		return _rank.removeLast(); 
 		
 	
 	}
-	
+	*/
 	public String toString() {
 		if (isEmpty()) return "NULL"; 
 		String retStr = "TOP-> | "; 
@@ -93,39 +96,39 @@ public void addPile (int x, NumSort newRank) {
 		return retStr; 
 	}
 	
-/*	public static void main ( String[] args ) {
+	public static void main ( String[] args ) {
 		 NumSort rank = new NumSort();
-		 System.out.println("Testing toString... ");
-		 System.out.println(rank); 
+//		 System.out.println("Testing toString... ");
+//		 System.out.println(rank); 
 		 Card t1 = new Card(5,"Spade" );
 		 Card t2 = new Card(4,"Heart" );
 		 Card t3 = new Card(3,"Club" );
 		 Card t4 = new Card(1,"Diamond" );
-		 System.out.println("Testing add...");
+//		 System.out.println("Testing add...");
 		 rank.add( t1 );
-		 System.out.println("Added first card");
-		 System.out.println(rank);
+//		 System.out.println("Added first card");
+//		 System.out.println(rank);
 		 rank.add( t2 );
-		 System.out.println("Added second card");
-		 System.out.println(rank);
+//		 System.out.println("Added second card");
+//		 System.out.println(rank);
 		 rank.add( t3 );
-		 System.out.println("Added third card");
-		 System.out.println(rank);
+//		 System.out.println("Added third card");
+//		 System.out.println(rank);
 		 rank.add( t4 );
-		 System.out.println("Added error card");
-		 System.out.println(rank);
-		 System.out.println("Testing remove...");
-		 System.out.println("Removed a card");
-		 rank.remove();
-		 System.out.println(rank);
-		 System.out.println("Removed a card");
-		 rank.remove();
-		 System.out.println(rank);
-		 System.out.println("Removed a card");
-		 rank.remove();
+//		 System.out.println("Added error card");
+//		 System.out.println(rank);
+//		 System.out.println("Testing remove...");
+//		 System.out.println("Removed a card");
+//		 rank.remove();
+//		 System.out.println(rank);
+//		 System.out.println("Removed a card");
+//		 rank.remove();
+//		 System.out.println(rank);
+//		 System.out.println("Removed a card");
+//-		 rank.remove();
 		 System.out.println(rank);
 		 
 		
-	}//end main */
+	}//end main 
 	
 }//end class
