@@ -129,7 +129,7 @@ public class SolitaireRunner {
 	    } else if ( str2.equals("m") ) {
 		System.out.println("Choose where you want to place " + card.toString() + ":");
 		int c2 = colInput();	
-		numArray[c2].addPile( card );		    
+		numArray[c2-1].addPile( card );		    
 	    } else {
 		System.out.println("Invalid response!");
 		move();
@@ -154,7 +154,7 @@ public class SolitaireRunner {
 	    System.out.println("Choose a card to move:");
 	    r1 = rowInput();	
 	    c1 = colInput();
-	    card = numArray[c1].get(r1);
+	    card = numArray[c1-1].get(r1);
 	    if ( !isValidMove( r1, c1 ) ) {
 		System.out.println("Invalid spot!");
 		move();
@@ -202,11 +202,11 @@ public class SolitaireRunner {
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
 	    int c2 = colInput();
 	    if ( twoParam )
-		numArray[c2].addPile( r1, numArray[c1] );
+		numArray[c2-1].addPile( r1, numArray[c1-1] );
 	    else {
 		int size = numArray[c2].getSize();
-		numArray[c2].addPile( card );
-		if ( numArray[c2].getSize() - size != 1 ) {
+		numArray[c2-1].addPile( card );
+		if ( numArray[c2-1].getSize() - size != 1 ) {
 		    if ( card.getSuit().equals("S") )
 			spade.add(card);
 		    else if ( card.getSuit().equals("H") )
@@ -268,6 +268,7 @@ public class SolitaireRunner {
         while ( !s.checkComplete() ) {
 	    s.update();
 	    s.turn();
+	    s.merge();
 	}
 
 	System.out.println("YOU HAVE WON!");
