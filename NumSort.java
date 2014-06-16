@@ -59,7 +59,7 @@ public class NumSort implements Pile{
 		}
 	}
 	
-	public void addPile (int x, NumSort newRank) {
+	public void add(int x, NumSort newRank) {
 		LinkedList<Card> tempList = new LinkedList<Card>();
 		Card target = _rank.get(x);
 		int i = _rank.size();
