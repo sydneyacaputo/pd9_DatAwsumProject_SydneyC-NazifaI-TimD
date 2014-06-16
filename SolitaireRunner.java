@@ -6,15 +6,10 @@ public class SolitaireRunner {
 
     private DrawPile deck,leftovers;
     private SuitSort spade, heart, club, diamond;
-    private NumSort r1, r2, r3, r4, r5, r6, r7;
     private String[][] board;
     private NumSort[] numArray;
 
     Scanner sc = new Scanner(System.in);
-    
-    numArray = new NumSort[7];
-    for(int x=0; x<6; x++)
-	numArray[x]= "r"+ (x+1);
 
     public SolitaireRunner() {
 	deck = new DrawPile();
@@ -24,16 +19,12 @@ public class SolitaireRunner {
 	heart = new SuitSort("Heart");
 	club = new SuitSort("Club");
 	diamond = new SuitSort("Diamond");
-    
-	r1 = new NumSort();
-	r2 = new NumSort();
-	r3 = new NumSort();
-	r4 = new NumSort();
-	r5 = new NumSort();
-	r6 = new NumSort();
-	r7 = new NumSort();
 
-	deck.deal(r1, r2, r3, r4, r5, r6, r7);
+	numArray = new NumSort[7];
+	for ( int x=0; x<7; x++ )
+	    numArray[x] = new Numsort();
+
+	deck.deal( numArray );
 
         board = new String[20][8];
 	for ( int c=0; c<board[0].length; c++ ) {
@@ -71,47 +62,13 @@ public class SolitaireRunner {
     } // needs to be tweaked
 
     public void merge() {
-	for ( int a=0; a<19; a++ ) {
-	    if ( a >= r7.getSize() )
-		board[a+1][1] = "  ";
-	    else
-		board[a+1][1] = r7.get(a).toString();
-	}
-	for ( int b=0; b<19; b++ ) {
-	    if ( b >= r6.getSize() )
-		board[b+1][2] = "  ";
-	    else
-		board[b+1][2] = r6.get(b).toString();
-	}
-	for ( int c=0; c<19; c++ ) {
-	    if ( c >= r5.getSize() )
-		board[c+1][3] = "  ";
-	    else
-		board[c+1][3] = r5.get(c).toString();
-	}
-	for ( int d=0; d<19; d++ ) {
-	    if ( d >= r4.getSize() )
-		board[d+1][4] = "  ";
-	    else	   
-		board[d+1][4] = r4.get(d).toString();
-	}
-	for ( int e=0; e<19; e++ ) { 
-	    if ( e >= r3.getSize() )
-		board[e+1][5] = "  ";
-	    else   
-		board[e+1][5] = r3.get(e).toString();
-	}
-	for ( int f=0; f<19; f++ ) {
-	    if ( f >= r2.getSize() )
-		board[f+1][6] = "  ";
-	    else    
-		board[f+1][6] = r2.get(f).toString();
-	}
-	for ( int g=0; g<19; g++ ) { 
-	    if ( g >= r1.getSize() )
-		board[g+1][7] = "  ";
-	    else
-		board[g+1][7] = r1.get(g).toString();
+	for ( int n=numArray.length; n>0; n++ ) {
+	    for ( int i=0; i<19; i++ ) {
+		if ( i >= numArray[n].getSize() )
+		    board[i+1][8-n] = "  ";
+		else
+		    board[i+1][8-n] = numArray[n].get(i).toString();
+	    }
 	}
     }
 

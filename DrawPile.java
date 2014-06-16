@@ -70,13 +70,12 @@ public class DrawPile implements Pile {
 	return ret;
     }
 
-    public void deal( NumSort r1, NumSort r2, NumSort r3, NumSort r4, NumSort r5, NumSort r6, NumSort r7 ) {
-        NumSort[] field = { r1, r2, r3, r4, r5, r6, r7 };
+    public void deal( NumSort[] nums ) 
 	for ( int i=0; i<7; i++ ) {
 	    for ( int j=i; j<7; j++ ) {
-		field[j].addDeal(remove());
+		nums[j].addDeal(remove());
 		if ( j == i )
-		    field[j].peek().flip();
+		    nums[j].peek().flip();
 	    }
 	}
     }
