@@ -21,16 +21,27 @@ To win:
 
 
 Taken from: http://www.wikihow.com/Sample/Solitaire-Rules
+
 SUITS:
-D = DIAMONDS (RED CARD)
-S = SPADE  (BLACK CARD)
-C = CLUBS (BLACK CARD)
-H = HEART (RED CARD)
+
+D = Diamonds (Red)
+
+S = Spades (Black)
+
+C = Clubs (Black)
+
+H = Hearts (Red)
+
 
 FACE CARDS:
-J = JACK
-Q = QUEEN
-K = KING
-A = ACE
+
+J = Jack
+
+Q = Queen
+
+K = King
+
+A = Ace
+
 
 The cards will be displayed as SUITvalue — i.e. CA = Ace of Clubs; S2= 2 of Spades
