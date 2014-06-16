@@ -1,10 +1,11 @@
  Solitaire by Sydney Caputo, Tim Diep, and Nazifa Islam 
  
 How to Run:
-  Simply compile the SolitaireRunner.java class
-  Once this is done, run the file and this will allow you to begin game play 
+  Simply compile the SolitaireRunner.java class; 
+  once this is done, run the file and this will allow you to begin game play 
   
   GAME PLAY IS DONE IN THE TERMINAL 
+  
 How to Play: 
 - Use any exposed aces to start a pile on which you will build up the remaining cards in that suit.
 - Move any remaining cards around as you build rows of cards that are in descending order and alternating color (e.g., 10 of clubs, 9 of diamonds, 8 of spades, 7 of hearts, etc.).
