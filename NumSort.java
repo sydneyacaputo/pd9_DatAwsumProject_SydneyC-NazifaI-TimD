@@ -74,7 +74,12 @@ public class NumSort implements Pile{
     }
 	
     public void addPile (Card c) {
-	this.add(c);
+	if ( checkColor( peek() ).equals( checkColor( c ) ) 
+		  || peek().getValue() - c.getValue() != 1 )
+	    return;
+	else {
+	    _rank.add( c );
+	}
     }
 	
     public Card remove() {
