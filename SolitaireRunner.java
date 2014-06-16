@@ -1,5 +1,4 @@
 // This will be the main class from which the game is run
-
 import java.util.*;
 
 public class SolitaireRunner {
@@ -127,7 +126,7 @@ public class SolitaireRunner {
 	    } else if ( sc.nextLine().equals("m") ) {
 		System.out.println("Choose where you want to place " + card.toString() + ":");
 		int c2 = colInput();	
-		numArray[c2].add( card );		    
+		numArray[c2].addPile( card );		    
 	    } else {
 		System.out.println("Invalid response!");
 		move();
@@ -144,10 +143,13 @@ public class SolitaireRunner {
     public void move() {
 	System.out.print("Move from the field (f) or the suit piles (s)? ");
 	Card card;
+	int c1;
+	int r1;
+	boolean twoParam = true;
 	if ( sc.nextLine().equals("f") ) {
 	    System.out.println("Choose a card to move:");
-	    int r1 = rowInput();	
-	    int c1 = colInput();
+	    r1 = rowInput();	
+	    c1 = colInput();
 	    card = numArray[c1].get(r1);
 
 	    if ( !isValidMove( r1, c1 ) ) {
@@ -157,17 +159,18 @@ public class SolitaireRunner {
 	} else if ( sc.nextLine().equals("s") ) {
 	    System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
 	    if ( sc.nextLine().equals("s") )
-		card = spade.peek();
+		card = spade.remove();
 	    else if ( sc.nextLine().equals("h") )
-		card = heart.peek();
+		card = heart.remove();
 	    else if ( sc.nextLine().equals("c") )
-		card = club.peek();
+		card = club.remove();
 	    else if ( sc.nextLine().equals("d") )
-		card = diamond.peek();
+		card = diamond.remove();
 	    else {
 		System.out.println("Invalid response!");
 		move();
 	    }
+	    twoParam = false;
 	} else {
 	    System.out.println("Invalid response!");
 	    move();
@@ -190,8 +193,23 @@ public class SolitaireRunner {
 	    }
 	} else if ( sc.nextLine().equals("m") ) {
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
-	    int c2 = colInput();	
-	    numArray[c2].add( card );		    
+	    int c2 = colInput();
+	    if ( twoParam )
+		numArray[c2].addPile( row, numArray[c1] );
+	    else {
+		int size = numArray[c2].getSize();
+		numArray[c2].addPile( card );
+		if ( numArray[c2].getSize() - size != 1 ) {
+		    if ( card.getSuit().equals("S") )
+			spade.add(card);
+		    else if ( card.getSuit().equals("H") )
+			heart.add(card);
+		    else if ( card.getSuit().equals("C") )
+			club.add(card);
+		    else 
+			diamond.add(card);
+		}
+	    }
 	} else {
 	    System.out.println("Invalid response!");
 	    move();
