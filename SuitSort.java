@@ -18,10 +18,12 @@ public class SuitSort implements Pile {
     }
 
     public void add( Card c ) {
-	if ( ( isEmpty() && c.getValue() == 1 && 
-	       c.getSuit().equals( _suit ) ) || 
-	     ( c.getValue() == _pile.peek().getValue() + 1 && 
-	       c.getSuit().equals( _suit ) ) ) {
+	if ( isEmpty() && c.getValue() == 1 && 
+	     c.getSuit().equals( _suit ) ) {
+	    _pile.push(c);
+	    _size++;
+	} else if ( c.getValue() == _pile.peek().getValue() + 1 && 
+		    c.getSuit().equals( _suit ) ) {
 	    _pile.push(c);
 	    _size++;
 	} else 
