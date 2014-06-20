@@ -50,8 +50,8 @@ public class NumSort implements Pile{
 	    _rank.add( c );
 	    return true;
 	}
-	else if ( checkColor( peek() ).equals( checkColor( c ) ) //if this card and the last card are not alternating
-		  || peek().getValue() - c.getValue() != 1 )//or if the cards aren't back to back 
+	else if ( checkColor( peek() ).equals( checkColor( c ) )
+		  || peek().getValue() - c.getValue() != 1 )
 	    return false;
 	else {
 	    _rank.add( c );
@@ -59,7 +59,27 @@ public class NumSort implements Pile{
 	}
     }
 	
-    public boolean addPile (int x, NumSort oldRank) {
+    public boolean addPile( int x, NumSort oldRank ) {
+	if ( isEmpty() ) {
+	    if ( c.getValue() != 13 ) {
+		System.out.println("You can't place that here!");
+		return false;
+	    } else {
+		LinkedList<Card> tempList = new LinkedList<Card>();
+		Card target = oldRank.get(x);
+		int i = oldRank.size() - 1;
+		while ( oldRank.get(i) != target ) {
+		    tempList.add(oldRank.remove());
+		    i--;
+		}
+		tempList.add(target);
+		oldRank.remove(target);
+		for ( int j=tempList.size()-1; j >= 0; j--) 
+		    _rank.add(tempList.remove(j));
+		return true;
+	    }
+    	} 
+
 	if ( checkColor( peek() ).equals( checkColor( oldRank.get(x) ) ) ||
 	     peek().getValue() - oldRank.get(x).getValue() != 1 )
 	    return false;
@@ -80,12 +100,20 @@ public class NumSort implements Pile{
 		
     }
 	
-    public boolean addPile (Card c) {
-	if ( checkColor( peek() ).equals( checkColor( c ) ) 
+    public boolean addPile( Card c ) {
+	if ( isEmpty() ) {
+	    if ( c.getValue() == 13 ) {
+		_rank.add(c);
+		return true;
+	    } else { 
+		System.out.println("You can't place that here!");
+		return false;
+	    }
+	} else if ( checkColor( peek() ).equals( checkColor( c ) ) 
 		  || peek().getValue() - c.getValue() != 1 )
 	    return false;
 	else {
-	    _rank.add( c );
+	    _rank.add(c);
 	    return true;
 	}
     }
