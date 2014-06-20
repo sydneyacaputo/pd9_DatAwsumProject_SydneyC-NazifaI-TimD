@@ -154,7 +154,7 @@ public class SolitaireRunner {
 	    System.out.println("Choose a card to move:");
 	    r1 = rowInput();	
 	    c1 = colInput();
-	    card = numArray[c1-1].get(r1-1);
+	    card = numArray[8-c1].get(r1-1);
 	    if ( !isValidMove( r1, c1 ) ) {
 		System.out.println("Invalid spot!");
 		move();
@@ -202,10 +202,10 @@ public class SolitaireRunner {
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
 	    int c2 = colInput();
 	    if ( twoParam )
-		numArray[c2-1].addPile( r1, numArray[c1-1] );
+		numArray[8-c2].addPile( r1, numArray[8-c1] );
 	    else {
 		int size = numArray[c2].getSize();
-		numArray[c2-1].addPile( card );
+		numArray[8-c2].addPile( card );
 		if ( numArray[c2-1].getSize() - size != 1 ) {
 		    if ( card.getSuit().equals("S") )
 			spade.add(card);
