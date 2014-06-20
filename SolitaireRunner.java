@@ -277,6 +277,8 @@ public class SolitaireRunner {
 	    return false;
 	if (col > numArray.length || col < 0)
 	    return false;
+	if(numArray[col].get(row)==null)
+	    return false;
 	Card card = numArray[col].get(row);
 	if ( card.isFaceUp() == false )
 	    return false;
