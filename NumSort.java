@@ -61,7 +61,7 @@ public class NumSort implements Pile{
 	
     public boolean addPile( int x, NumSort oldRank ) {
 	if ( isEmpty() ) {
-	    if ( c.getValue() != 13 ) {
+	    if ( oldRank.get(x).getValue() != 13 ) {
 		System.out.println("You can't place that here!");
 		return false;
 	    } else {

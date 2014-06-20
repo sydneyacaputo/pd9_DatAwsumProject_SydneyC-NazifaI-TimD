@@ -22,6 +22,7 @@ public class SuitSort implements Pile {
 	    if ( c.getValue() == 1 && c.getSuit().equals( _suit ) ) {
 	    _pile.push(c);
 	    _size++;
+	    System.out.println("Added " + c.toString() + "!");
 	    return true;
 	    } else {
 		System.out.println("Thats the wrong suit!");
@@ -31,6 +32,7 @@ public class SuitSort implements Pile {
 	     c.getSuit().equals( _suit ) ) {
 	    _pile.push(c);
 	    _size++;
+	    System.out.println("Added " + c.toString() + "!");
 	    return true;
 	} else {
 	    System.out.println("You can't place that here!");

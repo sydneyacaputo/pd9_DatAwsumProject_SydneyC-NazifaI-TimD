@@ -25,7 +25,7 @@ public class SolitaireRunner {
 
 	deck.deal( numArray );
 
-        board = new String[20][8];
+        board = new String[19][8];
 	for ( int c=0; c<board[0].length; c++ ) {
 	    if ( c < 10 )
 		board[0][c] = " " + c + " ";
@@ -62,7 +62,7 @@ public class SolitaireRunner {
 
     public void merge() {
 	for ( int n=numArray.length-1; n>=0; n-- ) {
-	    for ( int i=0; i<19; i++ ) {
+	    for ( int i=0; i<18; i++ ) {
 		if ( i == numArray[n].getSize() - 1 ) {
 		    if ( !numArray[n].get(i).isFaceUp() )
 			numArray[n].get(i).flip();
