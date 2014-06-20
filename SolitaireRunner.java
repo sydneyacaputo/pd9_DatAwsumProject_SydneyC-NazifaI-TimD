@@ -263,6 +263,8 @@ public class SolitaireRunner {
     public boolean isValidMove( int row, int col ) {
 	if ( row > numArray[col].getSize() )
 	    return false;
+	if (col > numArray.length)
+	    return false;
 	Card card = numArray[col].get(row);
 	if ( card.isFaceUp() == false )
 	    return false;
