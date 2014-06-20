@@ -140,6 +140,7 @@ public class SolitaireRunner {
 		move();
 	    }
 	} else if ( str1.equals("n") ) {
+	    System.out.println("Moved to leftover pile!");
 	    leftovers.add(deck.remove());
 	} else {
 	    System.out.println("Invalid response!");
