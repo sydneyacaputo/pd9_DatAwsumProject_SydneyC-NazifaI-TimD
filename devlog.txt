@@ -59,6 +59,9 @@
 	- realized we needed separate methods for player adding and dealing adding in NumSort, so we created new methods
 
 2014-06-15
-- added more user input
-- array of numsorts, edited the code to reflect that
-- separate helper methods to make the turn methods easier to navigate
+-> Added more user input
+-> Array of numsorts, edited the code to reflect that
+-> Separate helper methods to make the turn methods easier to navigate
+
+2014-06-20
+-> After a long stretch of errors and stress, some semblance of the game is starting to be revealed. There are many basic features that work seamlessly, such as adding a card to a suit pile, adding a card to a mixed pile, and dealing cards.
