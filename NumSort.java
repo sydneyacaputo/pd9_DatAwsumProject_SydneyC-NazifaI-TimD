@@ -20,7 +20,7 @@ public class NumSort implements Pile{
 
     public String checkColor( Card c ) {
 	String suit = c.getSuit();
-	if ( suit == "Heart" || suit == "Diamond" ) 
+	if ( suit == "H" || suit == "D" ) 
 	    return "red";
 	return "black";
     }
@@ -59,37 +59,40 @@ public class NumSort implements Pile{
 	}
     }
 	
-    public void addPile (int x, NumSort oldRank) {
-	LinkedList<Card> tempList = new LinkedList<Card>();
-	Card target = oldRank.get(x);
-	int i = oldRank.size() - 1;
-	while (oldRank.get(i) != target) {
-	    tempList.add(oldRank.remove(oldRank.get(i)));
-	    i--;
-	}
-	tempList.add(target);
-	oldRank.remove(target);
-	for (i = _rank.size() - 1; i >= 0; i--) {
-	    _rank.add(tempList.remove(i));
+    public boolean addPile (int x, NumSort oldRank) {
+	if ( checkColor( peek() ).equals( checkColor( oldRank.get(x) ) ) ||
+	     peek().getValue() - oldRank.get(x).getValue() != 1 )
+	    return false;
+	else { 
+	    LinkedList<Card> tempList = new LinkedList<Card>();
+	    Card target = oldRank.get(x);
+	    int i = oldRank.size() - 1;
+	    while ( oldRank.get(i) != target ) {
+		tempList.add(oldRank.remove());
+		i--;
+	    }
+	    tempList.add(target);
+	    oldRank.remove(target);
+	    for ( int j=tempList.size()-1; j >= 0; j--) 
+		_rank.add(tempList.remove(j));
+	    return true;
 	}
 		
     }
 	
-    public void addPile (Card c) {
+    public boolean addPile (Card c) {
 	if ( checkColor( peek() ).equals( checkColor( c ) ) 
 		  || peek().getValue() - c.getValue() != 1 )
-	    return;
+	    return false;
 	else {
 	    _rank.add( c );
+	    return true;
 	}
     }
 	
     public Card remove() {
 	if ( isEmpty() ) return null;
-	//if flipped????
-	return _rank.removeLast(); 
-		
-	
+	return _rank.removeLast(); 	
     }
 	
     public Card remove(Card c) {

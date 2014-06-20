@@ -133,7 +133,7 @@ public class SolitaireRunner {
 		}
 	    } else if ( str2.equals("m") ) {
 		System.out.println("Choose where you want to place " + card.toString() + ":");
-		int c2 = 7- colInput();	
+		int c2 = 7 - colInput();	
 		numArray[c2].addPile( card );		    
 	    } else {
 		System.out.println("Invalid response!");
@@ -193,8 +193,8 @@ public class SolitaireRunner {
 	    if ( str3.equals("m") ) {
 		System.out.println("Choose where you want to place " + card.toString() + ":");
 		int c2 = 7 - colInput();
-		numArray[c2].addPile( r1, numArray[c1] );
-	    } else if ( str3.equals("s") ) {
+	        numArray[c2].addPile( r1, numArray[c1] );
+	    } else if ( str3.equals("s") && ( r1 == (numArray[c1].size() - 1) ) ) {
 		System.out.print("Which pile do you want to place " + card.toString() + "? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
 		String str4 = "" + sc.next();
 		if ( str4.equals("s") ) {
