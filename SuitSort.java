@@ -18,12 +18,16 @@ public class SuitSort implements Pile {
     }
 
     public boolean add( Card c ) {
-	if ( _pile.isEmpty() && 
-	     ( c.getValue() == 1  && c.getSuit().equals( _suit ) ) ) {
+	if ( _pile.isEmpty()){
+	    if( c.getValue() == 1  && c.getSuit().equals( _suit )) {
 	    _pile.push(c);
 	    _size++;
-	    return true;
-	} else if ( c.getValue() == _pile.peek().getValue() + 1 && 
+	    return true;}
+	    else {
+		System.out.println("You can't place that here!");
+		return false;
+	    }}
+	else if ( c.getValue() == _pile.peek().getValue() + 1 && 
 	     c.getSuit().equals( _suit ) ) {
 	    _pile.push(c);
 	    _size++;
