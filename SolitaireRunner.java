@@ -64,9 +64,9 @@ public class SolitaireRunner {
 	for ( int n=numArray.length-1; n>=0; n-- ) {
 	    for ( int i=0; i<19; i++ ) {
 		if ( i >= numArray[n].getSize() )
-		    board[i+1][7-n] = "  ";
+		    board[i+1][n] = "  ";
 		else
-		    board[i+1][7-n] = numArray[n].get(i).toString();
+		    board[i+1][n] = numArray[n].get(i).toString();
 	    }
 	}
     }
