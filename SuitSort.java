@@ -21,7 +21,7 @@ public class SuitSort implements Pile {
 	if ( ( isEmpty() && c.getValue() == 1 && 
 	       c.getSuit().equals( _suit ) ) || 
 	     ( c.getValue() == _pile.peek().getValue() + 1 && 
-	       c.getSuit().equals( _suit ) ) )
+	       c.getSuit().equals( _suit ) ) ) {
 	    _pile.push(c);
 	    _size++;
 	} else 
@@ -32,6 +32,7 @@ public class SuitSort implements Pile {
 	if ( isEmpty() ) {
 	    System.out.println("The pile is empty!");
 	    return null; 
+	}
 	_size--;
 	return _pile.pop();
     }
