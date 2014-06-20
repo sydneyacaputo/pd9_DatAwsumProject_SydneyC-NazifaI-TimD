@@ -152,15 +152,16 @@ public class SolitaireRunner {
 	boolean twoParam = true;
 	if ( str1.equals("f") ) {
 	    System.out.println("Choose a card to move:");
-	    r1 = rowInput() - 1;	
+	    r1 = rowInput();	
 	    c1 = 8 - colInput();
 	    card = numArray[c1].get(r1);
 	    if ( !isValidMove( r1, c1 ) ) {
+		System.out.println("" + r1 + ", " + c1 );
 		System.out.println("Invalid spot!");
 		move();
 	    }
 	} else if ( str1.equals("s") ) {
-	    System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
+	    System.out.print("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
 	    String str2 = "" + sc.next();
 		
 	    if ( str2.equals("s") )
@@ -181,10 +182,10 @@ public class SolitaireRunner {
 	    move();
 	}
 	
-	System.out.println("Move to a suit pile (s) or a mixed pile (m)? ");
+	System.out.print("Move to a suit pile (s) or a mixed pile (m)? ");
 	String str3 = "" + sc.next();
 	if ( str3.equals("s") ) {
-	    System.out.println("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
+	    System.out.print("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
 	    String str4 = "" + sc.next();
 	    if ( str4.equals("s") )
 	        spade.add(card);

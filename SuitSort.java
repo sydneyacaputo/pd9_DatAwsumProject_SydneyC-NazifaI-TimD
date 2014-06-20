@@ -18,8 +18,10 @@ public class SuitSort implements Pile {
     }
 
     public void add( Card c ) {
-        if ( c.getValue() == _pile.peek().getValue() + 1
-	     && c.getSuit().equals( _suit ) ) {
+	if ( ( isEmpty() && c.getValue() == 1 && 
+	       c.getSuit().equals( _suit ) ) || 
+	     ( c.getValue() == _pile.peek().getValue() + 1 && 
+	       c.getSuit().equals( _suit ) ) )
 	    _pile.push(c);
 	    _size++;
 	} else 
@@ -27,6 +29,9 @@ public class SuitSort implements Pile {
     }
 
     public Card remove() {
+	if ( isEmpty() ) {
+	    System.out.println("The pile is empty!");
+	    return null; 
 	_size--;
 	return _pile.pop();
     }
