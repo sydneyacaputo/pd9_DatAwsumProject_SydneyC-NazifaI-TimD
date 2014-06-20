@@ -1,4 +1,4 @@
-wh// This will be the main class from which the game is run
+// This will be the main class from which the game is run
 import java.util.*;
 
 public class SolitaireRunner {
