@@ -149,14 +149,14 @@ public class SolitaireRunner {
 	Card card = new Card(1,"S");
 	int c1 = 0;
 	int r1 = 0;
-	boolean twoParam = true;
+	boolean fromField = true;
 	if ( str1.equals("f") ) {
 	    System.out.println("Choose a card to move:");
 	    r1 = rowInput() - 1;	
 	    c1 = 7 - colInput();
 	    card = numArray[c1].get(r1);
 	    if ( !isValidMove( r1, c1 ) ) {
-		System.out.println("" + r1 + ", " + c1 );
+		// System.out.println("" + r1 + ", " + c1 );
 		System.out.println("Invalid spot!");
 		move();
 	    }
@@ -165,62 +165,67 @@ public class SolitaireRunner {
 	    String str2 = "" + sc.next();
 		
 	    if ( str2.equals("s") )
-		card = spade.remove();
+		card = spade.peek();
 	    else if ( str2.equals("h") )
-		card = heart.remove();
+		card = heart.peek();
 	    else if ( str2.equals("c") )
-		card = club.remove();
+		card = club.peek();
 	    else if ( str2.equals("d") )
-		card = diamond.remove();
+		card = diamond.peek();
 	    else {
 		System.out.println("Invalid response!");
 		move();
 	    }
-	    twoParam = false;
+	    fromField = false;
 	} else {
 	    System.out.println("Invalid response!");
 	    move();
 	}
-	
-	System.out.print("Move to a suit pile (s) or a mixed pile (m)? ");
-	String str3 = "" + sc.next();
-	if ( str3.equals("s") ) {
-	    System.out.print("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
-	    String str4 = "" + sc.next();
-	    if ( str4.equals("s") )
-	        spade.add(card);
-	    else if ( str4.equals("h") )
-		heart.add(card);
-	    else if ( str4.equals("c") )
-	        club.add(card);
-	    else if ( str4.equals("d") )
-		diamond.add(card);
-	    else {
+	 
+	if ( fromField ) {
+	    System.out.print("Move to a suit pile (s) or a mixed pile (m)? ");
+	    String str3 = "" + sc.next();
+	    if ( str3.equals("m") ) {
+		System.out.println("Choose where you want to place " + card.toString() + ":");
+		int c2 = 7 - colInput();
+		numArray[c2].addPile( r1, numArray[c1] );
+	    } else if ( str3.equals("s") ) {
+		System.out.print("Which pile do you want to place " + card.toString() + "? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
+		String str4 = "" + sc.next();
+		if ( str4.equals("s") ) {
+		    if ( spade.add(card) )
+			numArray[c1].remove();
+		} else if ( str4.equals("h") ) {
+		    if ( heart.add(card) )	
+			numArray[c1].remove();
+		} else if ( str4.equals("c") ) {
+		    if ( club.add(card) )
+			numArray[c1].remove();
+		} else if ( str4.equals("d") ) {
+		    if ( diamond.add(card) )
+			numArray[c1].remove();
+		} else {
+		    System.out.println("Invalid response!");
+		    move();
+		}
+	    } else {
 		System.out.println("Invalid response!");
 		move();
 	    }
-	} else if ( str3.equals("m") ) {
+	} else {	    
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
 	    int c2 = 7 - colInput();
-	    if ( twoParam )
-		numArray[c2].addPile( r1, numArray[c1] );
-	    else {
-		int size = numArray[c2].getSize();
-		numArray[c2].addPile( card );
-		if ( numArray[c2].getSize() - size != 1 ) {
-		    if ( card.getSuit().equals("S") )
-			spade.add(card);
-		    else if ( card.getSuit().equals("H") )
-			heart.add(card);
-		    else if ( card.getSuit().equals("C") )
-			club.add(card);
-		    else 
-			diamond.add(card);
-		}
+	    System.out.println( "" + numArray[c2] );
+	    if ( numArray[c2].add( card ) ) {
+	        if ( card.getSuit().equals("S") )
+		    spade.remove();
+		else if ( card.getSuit().equals("H") )
+		    heart.remove();
+		else if ( card.getSuit().equals("C") )
+		    club.remove();
+		else 
+		    diamond.remove();
 	    }
-	} else {
-	    System.out.println("Invalid response!");
-	    move();
 	}
     }
 
