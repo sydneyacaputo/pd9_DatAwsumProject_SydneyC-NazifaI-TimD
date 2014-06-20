@@ -152,9 +152,9 @@ public class SolitaireRunner {
 	boolean twoParam = true;
 	if ( str1.equals("f") ) {
 	    System.out.println("Choose a card to move:");
-	    r1 = rowInput();	
-	    c1 = colInput();
-	    card = numArray[8-c1].get(r1-1);
+	    r1 = rowInput() - 1;	
+	    c1 = 8 - colInput();
+	    card = numArray[c1].get(r1);
 	    if ( !isValidMove( r1, c1 ) ) {
 		System.out.println("Invalid spot!");
 		move();
@@ -200,13 +200,13 @@ public class SolitaireRunner {
 	    }
 	} else if ( str3.equals("m") ) {
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
-	    int c2 = colInput();
+	    int c2 = 8 - colInput();
 	    if ( twoParam )
-		numArray[8-c2].addPile( r1, numArray[8-c1] );
+		numArray[c2].addPile( r1, numArray[c1] );
 	    else {
 		int size = numArray[c2].getSize();
-		numArray[8-c2].addPile( card );
-		if ( numArray[c2-1].getSize() - size != 1 ) {
+		numArray[c2].addPile( card );
+		if ( numArray[c2].getSize() - size != 1 ) {
 		    if ( card.getSuit().equals("S") )
 			spade.add(card);
 		    else if ( card.getSuit().equals("H") )
