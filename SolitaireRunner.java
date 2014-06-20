@@ -1,4 +1,4 @@
-// This will be the main class from which the game is run
+wh// This will be the main class from which the game is run
 import java.util.*;
 
 public class SolitaireRunner {
@@ -154,7 +154,7 @@ public class SolitaireRunner {
 	    System.out.println("Choose a card to move:");
 	    r1 = rowInput();	
 	    c1 = colInput();
-	    card = numArray[c1-1].get(r1);
+	    card = numArray[c1-1].get(r1-1);
 	    if ( !isValidMove( r1, c1 ) ) {
 		System.out.println("Invalid spot!");
 		move();
