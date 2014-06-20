@@ -244,6 +244,11 @@ public class SolitaireRunner {
 	    System.out.println("Invalid response!");
 	    return rowInput();
 	}
+
+	if ( row > 18 ) {
+	    System.out.println("Invalid row!");
+	    return rowInput();
+	}
 	return row;
     }
 
@@ -257,6 +262,12 @@ public class SolitaireRunner {
 	    System.out.println("Invalid response!");
 	    return colInput();
 	}
+	
+	if ( col > 7 ) {
+	    System.out.println("Invalid column!");
+	    return colInput();
+	}
+
 	return col;
     }
 
