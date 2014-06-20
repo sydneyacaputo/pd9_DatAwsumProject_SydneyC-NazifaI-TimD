@@ -24,7 +24,7 @@ public class SuitSort implements Pile {
 	    _size++;
 	    return true;}
 	    else {
-		System.out.println("You can't place that here!");
+		System.out.println("Thats the wrong suit!");
 		return false;
 	    }}
 	else if ( c.getValue() == _pile.peek().getValue() + 1 && 
