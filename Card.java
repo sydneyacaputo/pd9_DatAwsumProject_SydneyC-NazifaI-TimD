@@ -63,7 +63,7 @@ public class Card{
 	if ( _value == 10 )
 	    return _suit + _actVal;
 	else
-	    return " " + _suit + _actVal;
+	    return _suit + _actVal + " ";
     }
     // Need to change this for when it's flipped or not, we'll do that later
     

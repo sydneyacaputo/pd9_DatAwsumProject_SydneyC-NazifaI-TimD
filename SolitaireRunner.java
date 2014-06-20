@@ -63,6 +63,11 @@ public class SolitaireRunner {
     public void merge() {
 	for ( int n=numArray.length-1; n>=0; n-- ) {
 	    for ( int i=0; i<19; i++ ) {
+		if ( i == numArray[n].getSize() - 1 ) {
+		    if ( !numArray[n].get(i).isFaceUp() )
+			numArray[n].get(i).flip();
+		}
+
 		if ( i >= numArray[n].getSize() )
 		    board[i+1][7-n] = "  ";
 		else
