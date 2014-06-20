@@ -4,7 +4,7 @@ How to Run:
   Simply compile the SolitaireRunner.java class; 
   once this is done, run the file and this will allow you to begin game play 
   
-  GAME PLAY IS DONE IN THE TERMINAL 
+  GAME PLAY IS DONE IN THE TERMINAL, to better see the board it is HIGH SUGGESTED to make your terminal full screen when playing! 
   
 How to Play: 
 - Use any exposed aces to start a pile on which you will build up the remaining cards in that suit.
