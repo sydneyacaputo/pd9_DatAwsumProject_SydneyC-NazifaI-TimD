@@ -17,17 +17,21 @@ public class SuitSort implements Pile {
 	return _pile.peek();
     }
 
-    public void add( Card c ) {
-	if ( isEmpty() && c.getValue() == 1 && 
+    public boolean add( Card c ) {
+	if ( _pile.isEmpty() && 
+	     ( c.getValue() == 1  && c.getSuit().equals( _suit ) ) ) {
+	    _pile.push(c);
+	    _size++;
+	    return true;
+	} else if ( c.getValue() == _pile.peek().getValue() + 1 && 
 	     c.getSuit().equals( _suit ) ) {
 	    _pile.push(c);
 	    _size++;
-	} else if ( c.getValue() == _pile.peek().getValue() + 1 && 
-		    c.getSuit().equals( _suit ) ) {
-	    _pile.push(c);
-	    _size++;
-	} else 
+	    return true;
+	} else {
 	    System.out.println("You can't place that here!");
+	    return false;
+	}
     }
 
     public Card remove() {

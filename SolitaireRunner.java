@@ -14,10 +14,10 @@ public class SolitaireRunner {
 	deck = new DrawPile();
 	leftovers = new DrawPile();
 
-	spade = new SuitSort("Spade");
-	heart = new SuitSort("Heart");
-	club = new SuitSort("Club");
-	diamond = new SuitSort("Diamond");
+	spade = new SuitSort("S");
+	heart = new SuitSort("H");
+	club = new SuitSort("C");
+	diamond = new SuitSort("D");
 
 	numArray = new NumSort[7];
 	for ( int x=0; x<7; x++ )
@@ -128,8 +128,8 @@ public class SolitaireRunner {
 		}
 	    } else if ( str2.equals("m") ) {
 		System.out.println("Choose where you want to place " + card.toString() + ":");
-		int c2 = colInput();	
-		numArray[c2-1].addPile( card );		    
+		int c2 = 7- colInput();	
+		numArray[c2].addPile( card );		    
 	    } else {
 		System.out.println("Invalid response!");
 		move();
@@ -152,8 +152,8 @@ public class SolitaireRunner {
 	boolean twoParam = true;
 	if ( str1.equals("f") ) {
 	    System.out.println("Choose a card to move:");
-	    r1 = rowInput();	
-	    c1 = 8 - colInput();
+	    r1 = rowInput() - 1;	
+	    c1 = 7 - colInput();
 	    card = numArray[c1].get(r1);
 	    if ( !isValidMove( r1, c1 ) ) {
 		System.out.println("" + r1 + ", " + c1 );
@@ -201,7 +201,7 @@ public class SolitaireRunner {
 	    }
 	} else if ( str3.equals("m") ) {
 	    System.out.println("Choose where you want to place " + card.toString() + ":");
-	    int c2 = 8 - colInput();
+	    int c2 = 7 - colInput();
 	    if ( twoParam )
 		numArray[c2].addPile( r1, numArray[c1] );
 	    else {

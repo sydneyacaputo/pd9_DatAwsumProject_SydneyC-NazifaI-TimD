@@ -47,9 +47,10 @@ public class DrawPile implements Pile {
 	return _deck.get(index);
     }
 
-    public void add( Card c ) {
+    public boolean add( Card c ) {
 	_deck.add(c);
 	_size++;
+	return true;
     }
 
     public Card remove() {

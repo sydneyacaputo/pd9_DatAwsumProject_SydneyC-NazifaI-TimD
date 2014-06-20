@@ -45,15 +45,17 @@ public class NumSort implements Pile{
      * OR if the last card is flipped, and this card is flipped, it can be added. This condition is not for the user but for the coder. 
      * When Deck deals out the cards at random in the beginning of the game, add() must account for it 
      */
-    public void add( Card c ) {
+    public boolean add( Card c ) {
 	if ( isEmpty() || !(peek().isFaceUp()) ) {
 	    _rank.add( c );
+	    return true;
 	}
 	else if ( checkColor( peek() ).equals( checkColor( c ) ) //if this card and the last card are not alternating
 		  || peek().getValue() - c.getValue() != 1 )//or if the cards aren't back to back 
-	    return;
+	    return false;
 	else {
 	    _rank.add( c );
+	    return true;
 	}
     }
 	

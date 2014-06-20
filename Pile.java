@@ -5,7 +5,7 @@ public interface Pile {
 	
     Card peek(); //peeks the top cards
 
-    void add( Card c );
+    boolean add( Card c );
 
     Card remove();
 
