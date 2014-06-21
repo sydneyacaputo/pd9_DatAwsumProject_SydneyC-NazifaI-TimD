@@ -42,6 +42,11 @@ public class DrawPile implements Pile {
 	card.flip();
 	return card;
     }
+    
+    public Card peekFirst() {
+    	Card card = _deck.get(0);
+	return card;
+    }
 
     public Card get( int index ) {
 	return _deck.get(index);
