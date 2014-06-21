@@ -173,7 +173,7 @@ public class SolitaireRunner {
 	    
 	    Card oldCard = card;
 		
-	    if ( str2.equals("s") 
+	    if ( str2.equals("s") )
 		card = spade.peek();
 	    else if ( str2.equals("h") )
 		card = heart.peek();
@@ -187,7 +187,7 @@ public class SolitaireRunner {
 	    }
 	    
 	    if (card == null) {
-	    	System.out.println("Invalid response!);
+	    	System.out.println("Invalid response!");
 	    	card = oldCard; 
 	    }
 	    
