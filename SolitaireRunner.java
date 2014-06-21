@@ -110,6 +110,11 @@ public class SolitaireRunner {
 	}
 	    
 	System.out.println("The next card dealt is: " + deck.peek());
+	System.out.println("peek: " + deck.peek());
+	System.out.println("peek: " + deck.peek());
+	System.out.println("peek: " + deck.peek());
+	System.out.println("peek: " + deck.peek());
+	System.out.println("peek: " + deck.peek());
 	System.out.print("Do you want to move this card? (y/n): ");
 	String str1 = "" + sc.next();	
 	if ( str1.equals("y") ) {
