@@ -133,6 +133,9 @@ public class SolitaireRunner {
 		    move();
 		}
 	    } else if ( str2.equals("m") ) {
+	    	if (!card.isFaceUp) {
+	    		card.flip();
+	    	}
 		System.out.println("Choose where you want to place " + card.toString() + ":");
 		int c2 = 7 - colInput();	
 		numArray[c2].addPile( card );		    
@@ -200,7 +203,10 @@ public class SolitaireRunner {
 	if ( fromField ) {
 	    System.out.print("Move to a suit pile (s) or a mixed pile (m)? ");
 	    String str3 = "" + sc.next();
-	    if ( str3.equals("m") ) 
+	    if ( str3.equals("m") ) {
+	    	if (!(card.isFaceUp)){
+	    		card.flip();
+	    	} 
 		System.out.println("Choose where you want to place " + card.toString() + ":");
 		int c2 = 7 - colInput();
 	        numArray[c2].addPile( r1, numArray[c1] );
