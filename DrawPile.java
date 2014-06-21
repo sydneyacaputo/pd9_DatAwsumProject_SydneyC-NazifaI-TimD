@@ -38,7 +38,6 @@ public class DrawPile implements Pile {
     }
 	    
     public Card peek() {
-    	_deck.get(0).flip();
 	Card card = _deck.get(0);
 	card.flip();
 	return card;
