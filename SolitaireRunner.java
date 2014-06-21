@@ -204,7 +204,7 @@ public class SolitaireRunner {
 	    System.out.print("Move to a suit pile (s) or a mixed pile (m)? ");
 	    String str3 = "" + sc.next();
 	    if ( str3.equals("m") ) {
-	    	if (!(card.isFaceUp)){
+	    	if (!(card.isFaceUp())){
 	    		card.flip();
 	    	} 
 		System.out.println("Choose where you want to place " + card.toString() + ":");
