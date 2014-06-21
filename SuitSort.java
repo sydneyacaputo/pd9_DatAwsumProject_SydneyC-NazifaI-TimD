@@ -56,6 +56,9 @@ public class SuitSort implements Pile {
     public String toString() {  
 	if ( isEmpty() )
 	    return "   ";
+	else if (peek().toString().equals("#")) {
+		peek().flip();
+	}
 	return peek().toString();
     }
 
