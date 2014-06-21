@@ -294,7 +294,11 @@ public class SolitaireRunner {
 
         while ( !s.checkComplete() ) {
 	    s.update();
-	    s.turn();
+	    try {
+	    s.turn(); }
+	    catch (IndexOutOfBoundsException) {
+	    	System.out.println("Invalid location");
+	    }
 	    s.merge();
 	}
 
