@@ -109,8 +109,8 @@ public class SolitaireRunner {
 	    leftovers = new DrawPile();
 	}
 	    
-	System.out.println("The next card dealt is: " + deck.peekFirst());
-	deck.peekFirst();
+	System.out.println("The next card dealt is: " + deck.peek());
+	deck.peek();
 	System.out.print("Do you want to move this card? (y/n): ");
 	String str1 = "" + sc.next();	
 	if ( str1.equals("y") ) {
