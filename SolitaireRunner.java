@@ -132,8 +132,8 @@ public class SolitaireRunner {
 		    System.out.println("Invalid response!");
 		    move();
 		}
-	    } else if ( str2.equals("m") ) {
-	    	if (!card.isFaceUp) {
+	    } else if ( str2.equals("m") ) 
+	    	if (!(card.isFaceUp())){
 	    		card.flip();
 	    	}
 		System.out.println("Choose where you want to place " + card.toString() + ":");
