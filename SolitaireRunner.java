@@ -170,8 +170,10 @@ public class SolitaireRunner {
 	} else if ( str1.equals("s") ) {
 	    System.out.print("Which pile? Spades (s)? Hearts (h)? Clubs (c)? or Diamonds (d)? ");
 	    String str2 = "" + sc.next();
+	    
+	    Card oldCard = card;
 		
-	    if ( str2.equals("s") )
+	    if ( str2.equals("s") 
 		card = spade.peek();
 	    else if ( str2.equals("h") )
 		card = heart.peek();
@@ -183,6 +185,12 @@ public class SolitaireRunner {
 		System.out.println("Invalid response!");
 		move();
 	    }
+	    
+	    if (card == null) {
+	    	System.out.println("Invalid response!);
+	    	card = oldCard; 
+	    }
+	    
 	    fromField = false;
 	} else {
 	    System.out.println("Invalid response!");
